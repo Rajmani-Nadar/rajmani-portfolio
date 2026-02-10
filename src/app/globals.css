@@ -4,27 +4,66 @@
 
 :root {
   color-scheme: dark;
+  /* Dark theme base background */
+  --bg: 25, 28, 35; /* #191c23 */
+  --surface: 12, 15, 23;
+  --foreground: 242, 245, 250;
+  --muted: 154, 164, 181;
+  --accent: 124, 255, 203;
+  --accent2: 93, 160, 255;
+  --border: 255, 255, 255;
+  --shadow-card: 0 15px 60px rgba(0, 0, 0, 0.35);
+}
+
+.light {
+  color-scheme: light;
+  --bg: 246, 247, 251;
+  --surface: 255, 255, 255;
+  --foreground: 15, 23, 42;
+  --muted: 73, 84, 104;
+  --accent: 74, 190, 154;
+  --accent2: 82, 139, 255;
+  --border: 15, 23, 42;
+  --shadow-card: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
 
 body {
-  background-color: #05060a;
+  background-color: rgb(var(--bg));
+  color: rgb(var(--foreground));
+  transition: background-color 250ms ease, color 250ms ease;
 }
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0c0f17;
+  background: rgba(var(--surface), 1);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #7cffcb, #5da0ff);
+  background: linear-gradient(180deg, rgba(var(--accent), 1), rgba(var(--accent2), 1));
   border-radius: 9999px;
 }
 
 .section-shell {
-  @apply rounded-3xl border border-white/5 bg-surface/70 backdrop-blur-xl shadow-card;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(var(--border), 0.12);
+  background: rgba(var(--surface), 0.85);
+  backdrop-filter: blur(18px);
+  box-shadow: var(--shadow-card);
 }
 
 .prose-custom {
-  @apply prose prose-invert prose-headings:font-semibold prose-a:text-accent hover:prose-a:text-accent2 max-w-none;
+  @apply prose prose-headings:font-semibold prose-a:text-accent hover:prose-a:text-accent2 max-w-none dark:prose-invert;
+}
+
+.light .text-white {
+  color: rgb(var(--foreground)) !important;
+}
+.light .border-white\/5,
+.light .border-white\/10 {
+  border-color: rgba(var(--border), 0.12) !important;
+}
+.light .bg-white\/5,
+.light .bg-white\/10 {
+  background-color: rgba(var(--surface), 0.7) !important;
 }

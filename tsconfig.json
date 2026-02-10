@@ -22,11 +22,6 @@
         "./src/*"
       ]
     },
-    "types": [
-      "next",
-      "next/image-types",
-      "node"
-    ],
     "plugins": [
       {
         "name": "next"

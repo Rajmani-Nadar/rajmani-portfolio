@@ -55,7 +55,7 @@ Email: ${data.get('email')}`);
         </label>
         <button
           type="submit"
-          className="inline-flex items-center justify-center gap-2 rounded-xl bg-white px-4 py-2 text-sm font-semibold text-background shadow-card transition hover:-translate-y-0.5"
+          className="inline-flex items-center justify-center gap-2 rounded-xl border border-border/15 bg-surface/80 px-4 py-2 text-sm font-semibold text-foreground shadow-card transition hover:-translate-y-0.5 hover:border-border/30 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/30"
         >
           Send email
         </button>

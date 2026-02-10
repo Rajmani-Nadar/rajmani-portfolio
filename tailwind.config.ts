@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  darkMode: 'class',
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -9,11 +10,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#05060a',
-        surface: '#0c0f17',
-        accent: '#7CFFCB',
-        accent2: '#5da0ff',
-        muted: '#9aa4b5'
+        background: 'rgb(var(--bg) / <alpha-value>)',
+        surface: 'rgb(var(--surface) / <alpha-value>)',
+        foreground: 'rgb(var(--foreground) / <alpha-value>)',
+        muted: 'rgb(var(--muted) / <alpha-value>)',
+        accent: 'rgb(var(--accent) / <alpha-value>)',
+        accent2: 'rgb(var(--accent2) / <alpha-value>)',
+        border: 'rgb(var(--border) / <alpha-value>)'
       },
       fontFamily: {
         grotesk: ['"Space Grotesk"', 'system-ui', 'sans-serif'],

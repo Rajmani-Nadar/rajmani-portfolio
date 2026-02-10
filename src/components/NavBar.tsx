@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 
 const links = [
   { href: '/', label: 'Home' },
@@ -18,9 +19,9 @@ export function NavBar() {
 
   return (
     <header className="mb-10 sm:mb-12">
-      <div className="flex items-center justify-between rounded-2xl border border-white/5 bg-surface/70 px-4 py-3 backdrop-blur-xl shadow-card">
+      <div className="flex items-center justify-between gap-3 rounded-2xl border border-border/15 bg-surface/70 px-4 py-3 backdrop-blur-xl shadow-card transition-colors">
         <Link href="/" className="flex items-center gap-2 text-sm font-semibold tracking-tight">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent2 text-background font-bold shadow-glow">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-accent to-accent2 text-foreground font-bold shadow-glow">
             VR
           </span>
           <div className="leading-tight">
@@ -29,22 +30,25 @@ export function NavBar() {
           </div>
         </Link>
 
-        <button
-          className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle navigation"
-        >
-          <svg
-            className="h-6 w-6"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="sm:hidden inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border/20 bg-surface/80 text-foreground"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation"
           >
-            <path d="M4 7h16M4 12h16M4 17h16" />
-          </svg>
-        </button>
+            <svg
+              className="h-6 w-6"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            >
+              <path d="M4 7h16M4 12h16M4 17h16" />
+            </svg>
+          </button>
+        </div>
 
         <nav className="hidden sm:flex items-center gap-1">
           {links.map((link) => {
@@ -54,7 +58,7 @@ export function NavBar() {
                 key={link.href}
                 href={link.href}
                 className={`rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-white/5 ${
-                  active ? 'text-white bg-white/10' : 'text-muted'
+                  active ? 'text-foreground bg-white/10' : 'text-muted'
                 }`}
               >
                 {link.label}
@@ -63,7 +67,7 @@ export function NavBar() {
           })}
           <Link
             href="mailto:rajmaninadar2000@gmail.com"
-            className="ml-2 inline-flex items-center gap-2 rounded-xl bg-white text-background px-3 py-2 text-sm font-semibold shadow-card transition hover:-translate-y-0.5"
+            className="ml-2 inline-flex items-center gap-2 rounded-xl border border-border/15 bg-surface/80 px-3 py-2 text-sm font-semibold text-foreground shadow-card transition hover:-translate-y-0.5 hover:border-border/30 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/30"
           >
             <svg
               className="h-4 w-4"
@@ -83,7 +87,7 @@ export function NavBar() {
       </div>
 
       {open && (
-        <div className="mt-3 space-y-1 rounded-2xl border border-white/5 bg-surface/80 p-3 backdrop-blur-xl sm:hidden">
+        <div className="mt-3 space-y-2 rounded-2xl border border-border/15 bg-surface/80 p-3 backdrop-blur-xl sm:hidden">
           {links.map((link) => {
             const active = pathname === link.href;
             return (
@@ -91,7 +95,7 @@ export function NavBar() {
                 key={link.href}
                 href={link.href}
                 className={`block rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-white/5 ${
-                  active ? 'text-white bg-white/10' : 'text-muted'
+                  active ? 'text-foreground bg-white/10' : 'text-muted'
                 }`}
                 onClick={() => setOpen(false)}
               >
@@ -99,9 +103,13 @@ export function NavBar() {
               </Link>
             );
           })}
+          <div className="flex items-center justify-between rounded-xl border border-border/15 bg-surface/70 px-3 py-2">
+            <span className="text-sm font-medium text-muted">Theme</span>
+            <ThemeToggle />
+          </div>
           <Link
             href="mailto:rajmaninadar2000@gmail.com"
-            className="block rounded-xl bg-white text-center text-background px-3 py-2 text-sm font-semibold shadow-card transition"
+            className="block rounded-xl border border-border/15 bg-surface/80 text-center text-foreground px-3 py-2 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:border-border/30 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/30"
           >
             Hire me
           </Link>
