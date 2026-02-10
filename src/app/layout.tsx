@@ -12,12 +12,12 @@ export const metadata: Metadata = {
   title: 'V. Rajmani | Web Platform Developer',
   description:
     'Portfolio of V. Rajmani, a Web Platform Developer specializing in React, Next.js, Frappe/ERPNext, and API-first solutions.',
-  metadataBase: new URL('https://example.com'),
+  metadataBase: new URL('https://rajmani-portfolio-2001.vercel.app'),
   openGraph: {
     title: 'V. Rajmani | Web Platform Developer',
     description:
       'Building performant web platforms with React, Next.js, Frappe/ERPNext, and API-first architectures.',
-    url: 'https://example.com',
+    url: 'https://rajmani-portfolio-2001.vercel.app',
     siteName: 'V. Rajmani Portfolio',
     locale: 'en_US',
     type: 'website'
@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     title: 'V. Rajmani | Web Platform Developer',
     description:
       'Building performant web platforms with React, Next.js, Frappe/ERPNext, and API-first architectures.'
+  },
+  verification: {
+    google: 'fxmTqqQEOTeQ9X7FVo88NkTNyjVEZWZFV6C-2yCYnQI'
   },
   icons: {
     icon: '/favicon.ico'
