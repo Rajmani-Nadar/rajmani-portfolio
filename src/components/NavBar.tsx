@@ -94,24 +94,42 @@ export function NavBar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`block rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-white/5 ${
+                className={`flex items-center justify-between rounded-xl px-3 py-2 text-sm font-medium transition hover:bg-white/5 ${
                   active ? 'text-foreground bg-white/10' : 'text-muted'
                 }`}
                 onClick={() => setOpen(false)}
               >
-                {link.label}
+                <span>{link.label}</span>
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
               </Link>
             );
           })}
-          <div className="flex items-center justify-between rounded-xl border border-border/15 bg-surface/70 px-3 py-2">
-            <span className="text-sm font-medium text-muted">Theme</span>
-            <ThemeToggle />
-          </div>
           <Link
             href="mailto:rajmaninadar2000@gmail.com"
-            className="block rounded-xl border border-border/15 bg-surface/80 text-center text-foreground px-3 py-2 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:border-border/30 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/30"
+            className="flex items-center justify-between rounded-xl border border-border/15 bg-surface/80 text-center text-foreground px-3 py-2 text-sm font-semibold shadow-card transition hover:-translate-y-0.5 hover:border-border/30 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/30"
           >
-            Hire me
+            <span>Hire me</span>
+            <svg
+              className="h-4 w-4"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </Link>
         </div>
       )}

@@ -24,6 +24,20 @@ const buttonVariants = cva(
   }
 );
 
+const arrowIcon = (
+  <svg
+    className="h-4 w-4 transition-transform group-hover:translate-x-1"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M5 12h14M12 5l7 7-7 7" />
+  </svg>
+);
+
 interface ButtonProps extends VariantProps<typeof buttonVariants> {
   href: string;
   children: React.ReactNode;
@@ -34,11 +48,12 @@ export function Button({ href, children, variant, size, newTab }: ButtonProps) {
   return (
     <Link
       href={href}
-      className={cn(buttonVariants({ variant, size }))}
+      className={cn('group', buttonVariants({ variant, size }))}
       target={newTab ? '_blank' : undefined}
       rel={newTab ? 'noreferrer noopener' : undefined}
     >
       {children}
+      {arrowIcon}
     </Link>
   );
 }

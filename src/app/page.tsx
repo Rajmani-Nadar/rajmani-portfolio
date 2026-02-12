@@ -78,7 +78,7 @@ export default function HomePage() {
             <p className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">What I bring</p>
             <h2 className="text-2xl sm:text-3xl font-semibold">Product-minded engineering</h2>
           </div>
-          <Link href="/about" className="text-sm text-accent hover:text-accent2">About →</Link>
+          <Link href="/about" className="inline-flex items-center gap-1 text-sm text-accent hover:text-accent2 whitespace-nowrap">About <span>→</span></Link>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {highlights.map((item) => (

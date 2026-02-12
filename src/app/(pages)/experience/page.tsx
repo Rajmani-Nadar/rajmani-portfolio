@@ -21,12 +21,12 @@ export default function ExperiencePage() {
         <ExperienceItem
           company="Suraj Technologies Pvt Ltd"
           role="Web Platform Developer"
-          period="2023 – Present"
+          period="Jan 2025 - Feb 2026"
           achievements={[
-            'Migrated marketing and product sites to Next.js, increasing performance scores and SEO readiness.',
-            'Customized ERPNext workflows for inspection and procurement, reducing manual steps for field teams.',
-            'Implemented testing (Playwright) for ERP frontend modules, catching regressions before release.',
-            'Collaborated with designers and content teams to streamline CMS handoffs using Strapi and reusable components.'
+            "Migrated marketing and product sites to Next.js, improving performance scores and SEO.",
+            "Customized ERPNext workflows for inspection and procurement, reducing manual steps.",
+            "Implemented Playwright testing for ERP frontend modules to prevent regressions.",
+            "Collaborated with designers and content teams to streamline CMS workflows using Strapi."
           ]}
           tools={[
             'Next.js',
