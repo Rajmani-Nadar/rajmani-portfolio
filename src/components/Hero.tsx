@@ -106,13 +106,12 @@ export function Hero() {
             </Link>
 
             <a
-              href="/rajmani-resume.txt"
-              download
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:text-[#f9d977]"
-            >
-              <Download className="h-4 w-4" />
-              Download Resume
-            </a>
+  href="/resume/Rajmani_Nadar_Resume.pdf"
+  download
+  className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-6 py-3 font-semibold text-black transition hover:scale-105 hover:bg-yellow-400"
+>
+  Download Resume
+</a>
 
             <Link
               href="#contact"
