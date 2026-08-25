@@ -1,0 +1,5 @@
+﻿V. Rajmani Nadar
+Frontend Web Platform Developer
+Email: rajmaninadar2000@gmail.com
+Location: Tamil Nadu, India
+Skills: React, Next.js, TypeScript, Tailwind CSS, CMS, SEO, responsive UI development
