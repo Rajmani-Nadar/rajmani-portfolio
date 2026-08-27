@@ -9,7 +9,7 @@ export function Footer() {
           Email
         </Link>
         <span className="text-white/20">•</span>
-        <Link href="https://github.com/Rajmani-Nadar" target="_blank" className="hover:text-white transition">
+        <Link href="https://github.com/Rajmani-Nadar?tab=repositories" target="_blank" className="hover:text-white transition">
           GitHub
         </Link>
         <span className="text-white/20">•</span>

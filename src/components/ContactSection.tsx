@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const contactLinks = [
   { label: 'Email', href: 'mailto:rajmaninadar2000@gmail.com', icon: Mail },
-  { label: 'GitHub', href: 'https://github.com/Rajmani-Nadar', icon: GitBranch },
+  { label: 'GitHub', href: 'https://github.com/Rajmani-Nadar?tab=repositories', icon: GitBranch },
   { label: 'LinkedIn', href: 'https://linkedin.com/in/rajmani-v-5a550b233', icon: MessageCircle },
   { label: 'WhatsApp', href: 'https://wa.me/919876543210', icon: MessageCircle }
 ];

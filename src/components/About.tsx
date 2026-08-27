@@ -2,12 +2,26 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight, BriefcaseBusiness, HeartHandshake, Sparkles } from 'lucide-react';
+import Image from 'next/image';
 
 const stats = [
   { value: '1+', label: 'Years Experience' },
-  { value: '15+', label: 'Projects' },
-  { value: 'Next.js', label: 'Specialist' },
-  { value: '100%', label: 'Responsive Design' }
+  { value: '15+', label: 'Projects Delivered' },
+  { value: 'Next.js', label: 'Next.js Specialist' },
+  { value: '100%', label: 'Responsive Design' },
+  { value: '5', label: 'Live Websites' },
+  { value: 'SEO', label: 'Performance & SEO Ready' }
+];
+
+const currentTechnologies = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'GitHub', 'Vercel', 'CMS', 'REST API'];
+
+const focusAreas = ['Responsive UI Development', 'CMS Website Builder', 'Business Websites', 'Performance & SEO Optimization'];
+
+const recentWork = [
+  { title: 'Ragini Diagnostics', image: '/images/ragini-home.png', target: '#featured-ragini-diagnostics' },
+  { title: 'Hariharan Waterproofing', image: '/images/hariharan-home.png', target: '#featured-hariharan-waterproofing' },
+  { title: 'Grocery E-Commerce', image: '/images/grocery-home.png', target: '#featured-grocery-e-commerce' },
+  { title: 'Premium Car Wash Website', image: '/images/car-wash.png', target: '#featured-premium-car-wash' }
 ];
 
 const storyCards = [
@@ -71,9 +85,30 @@ export function About() {
               </div>
             ))}
           </div>
+
+          <div className="mt-8">
+            <h3 className="text-xl font-semibold text-white">Recent Work</h3>
+            <p className="mt-2 text-sm text-white/60">Healthcare • Waterproofing • E-Commerce • Business Landing Pages</p>
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {recentWork.map((project) => (
+                <motion.a
+                  key={project.title}
+                  href={project.target}
+                  whileHover={{ scale: 1.04 }}
+                  transition={{ duration: 0.2 }}
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D4AF37]/25 bg-[#111111] shadow-[0_0_0_rgba(212,175,55,0)] transition-shadow hover:shadow-[0_0_20px_rgba(212,175,55,0.18)]"
+                >
+                  <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width:640px) 50vw, 25vw" />
+                  <span className="absolute inset-x-0 bottom-0 bg-black/65 px-2 py-2 text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
+                    {project.title}
+                  </span>
+                </motion.a>
+              ))}
+            </div>
+          </div>
         </motion.div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
+        <div className="grid grid-cols-2 gap-4">
           {stats.map((stat) => (
             <motion.div
               key={stat.label}
@@ -81,12 +116,50 @@ export function About() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45 }}
-              className="rounded-[1.5rem] border border-white/10 bg-[#111111] p-5"
+              whileHover={{ y: -4 }}
+              className="flex min-h-28 flex-col justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#111111] p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
             >
               <p className="text-2xl font-bold text-[#D4AF37]">{stat.value}</p>
               <p className="mt-2 text-sm text-white/60">{stat.label}</p>
             </motion.div>
           ))}
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45 }}
+            whileHover={{ y: -4 }}
+            className="col-span-2 rounded-2xl border border-[#D4AF37]/20 bg-[#111111] p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
+          >
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#f9d977]">Currently Working With</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {currentTechnologies.map((technology) => (
+                <span key={technology} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/70">
+                  {technology}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45 }}
+            whileHover={{ y: -4 }}
+            className="col-span-2 rounded-2xl border border-[#D4AF37]/20 bg-[#111111] p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
+          >
+            <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#f9d977]">Focus Areas</h3>
+            <ul className="mt-4 grid gap-2 text-sm text-white/70 sm:grid-cols-2">
+              {focusAreas.map((area) => (
+                <li key={area} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
+                  {area}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>

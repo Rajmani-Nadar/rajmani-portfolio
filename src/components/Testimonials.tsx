@@ -5,11 +5,6 @@ import { Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: 'Rajmani delivered a clean, polished interface that balanced business goals with strong design execution. The site felt premium and conversion-focused from day one.',
-    client: 'Kethan Gold',
-    role: 'Luxury Brand'
-  },
-  {
     quote: 'The final result was fast, responsive, and very easy to manage. We appreciated the attention to user flow and the clean structure behind the website.',
     client: 'Ragini Diagnostics',
     role: 'Healthcare Services'

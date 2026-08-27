@@ -69,7 +69,7 @@ Email: ${data.get('email')}`);
         </div>
         <div className="space-y-3 text-sm text-muted">
           <p>Email: <a className="text-accent hover:text-accent2" href="mailto:rajmaninadar2000@gmail.com">rajmaninadar2000@gmail.com</a></p>
-          <p>GitHub: <a className="text-accent hover:text-accent2" href="https://github.com/Rajmani-Nadar" target="_blank" rel="noreferrer">github.com/Rajmani-Nadar</a></p>
+          <p>GitHub: <a className="text-accent hover:text-accent2" href="https://github.com/Rajmani-Nadar?tab=repositories" target="_blank" rel="noreferrer">github.com/Rajmani-Nadar</a></p>
           <p>LinkedIn: <a className="text-accent hover:text-accent2" href="https://linkedin.com/in/rajmani-v-5a550b233" target="_blank" rel="noreferrer">linkedin.com/in/rajmani-v-5a550b233</a></p>
         </div>
         <div className="rounded-2xl border border-white/5 bg-white/5 p-4 text-sm text-muted">
