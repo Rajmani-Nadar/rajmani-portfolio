@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   title: 'V. Rajmani Nadar | Frontend Web Platform Developer',
   description:
     'Frontend Web Platform Developer building fast, modern and elegant websites with React, Next.js and TypeScript.',
-  metadataBase: new URL('https://rajmani-portfolio-2001.vercel.app'),
+  metadataBase: new URL('https://rajmani-dev.vercel.app'),
   openGraph: {
     title: 'V. Rajmani Nadar | Frontend Web Platform Developer',
     description: 'Building fast, modern and elegant websites with React, Next.js and TypeScript.',
-    url: 'https://rajmani-portfolio-2001.vercel.app',
+    url: 'https://rajmani-dev.vercel.app',
     siteName: 'V. Rajmani Portfolio',
     locale: 'en_US',
     type: 'website'

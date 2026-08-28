@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 
-const baseUrl = 'https://rajmani-portfolio-2001.vercel.app';
+const baseUrl = 'https://rajmani-dev.vercel.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ['', '/about', '/projects', '/experience', '/contact'];

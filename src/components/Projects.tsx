@@ -68,7 +68,7 @@ const moreProjects = [
     title: 'Personal Portfolio',
     description: 'Personal developer portfolio built with Next.js, TypeScript, Tailwind CSS, Framer Motion, reusable components, and responsive design.',
     image: '/images/portfolio.png',
-    href: 'https://rajmani-portfolio-pi.vercel.app/',
+    href: 'https://rajmani-dev.vercel.app',
     github: 'https://github.com/Rajmani-Nadar/rajmani-portfolio',
     category: 'Personal brand',
     accent: 'from-[#D4AF37]/10 to-transparent'

@@ -7,21 +7,37 @@ const timeline = [
     role: 'Web Platform Developer',
     period: 'Current',
     company: 'JPencil Technologies',
-    description: 'Frontend Web Platform Developer working on CMS websites, ERPNext/Frappe business platforms, client support, dashboard customization, and website deployment.',
+    description: 'Frontend Web Platform Developer working on CMS websites, Website Builder support, client communication, support ticket management, and dashboard training.',
     responsibilities: [
-      'Develop responsive websites using HTML, CSS, Tailwind CSS, React, Next.js, and TypeScript.',
-      'Build reusable CMS-safe HTML and CSS components compatible with the Website Builder and CMS environment.',
-      'Customize ERPNext and Frappe dashboards, web pages, and business interfaces.',
-      'Develop frontend UI for CMS-backed business websites and dashboard experiences.',
-      'Solve client website issues, frontend bugs, CMS-related issues, and UI improvements.',
-      'Open support tickets for client-reported issues and close tickets after successful resolution.',
-      'Track and update the status of client queries throughout the support process.',
+      'Develop and customize responsive websites using HTML5 and CSS3.',
+      'Build reusable CMS-safe HTML and CSS sections compatible with the Website Builder.',
+      'Create landing pages, banners, and reusable website components inside the CMS.',
+      'Solve client website issues, frontend layout fixes, and CMS-related queries.',
+      'Open, manage, update, and close client support tickets after successful resolution.',
+      'Keep clients updated about the status of their reported queries until completion.',
       'Send professional follow-up emails regarding issue updates, completed fixes, pending tasks, and training sessions.',
-      'Connect with clients using AnyDesk and UltraViewer to provide dashboard training and website guidance.',
+      'Connect with clients through AnyDesk and UltraViewer to provide Website Builder and Dashboard training.',
       'Explain dashboard features, CMS management, and Website Builder functionality in a simple, easy-to-understand way.',
       'Assist clients with website content updates, CMS usage, deployment support, and post-launch guidance.'
     ],
-    technologies: 'React • Next.js • TypeScript • Tailwind CSS • HTML5 • CSS3 • ERPNext • Frappe Framework • CMS Website Builder • Git • GitHub • Vercel • AnyDesk • UltraViewer'
+    technologies: 'HTML5 • CSS3 • CMS Website Builder • Git • GitHub • Vercel • AnyDesk • UltraViewer'
+  },
+  {
+    role: 'Frontend Developer',
+    period: 'January 2025 - February 2026',
+    company: 'Sanvro Technologies',
+    description: 'Worked as a Frontend Developer building modern business platforms, CMS-driven websites, and dashboard interfaces using ERPNext, Frappe Framework, and Strapi Headless CMS. Focused on creating responsive user interfaces, reusable components, and seamless content management experiences for business applications.',
+    responsibilities: [
+      'Developed responsive frontend interfaces using React, Next.js, TypeScript, Tailwind CSS, HTML5, and CSS3.',
+      'Customized ERPNext web interfaces, portal pages, and dashboard layouts for business applications.',
+      'Worked with the Frappe Framework to build and enhance CMS-backed business workflows and frontend experiences.',
+      'Integrated and managed content using Strapi Headless CMS for dynamic websites and business platforms.',
+      'Built reusable UI components and maintained consistent design systems across multiple projects.',
+      'Improved dashboard usability, responsiveness, and overall user experience across ERPNext modules.',
+      'Integrated frontend applications with CMS and backend APIs for dynamic content rendering.',
+      'Collaborated with the development team to implement new features, fix UI issues, and optimize application performance.'
+    ],
+    technologies: 'ERPNext • Frappe Framework • Strapi Headless CMS • React • Next.js • TypeScript • Tailwind CSS • HTML5 • CSS3 • Git • GitHub'
   },
   {
     role: 'Freelance Frontend Developer',
