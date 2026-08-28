@@ -20,7 +20,7 @@ const timeline = [
       'Explain dashboard features, CMS management, and Website Builder functionality in a simple, easy-to-understand way.',
       'Assist clients with website content updates, CMS usage, deployment support, and post-launch guidance.'
     ],
-    technologies: 'HTML5 • CSS3 • CMS Website Builder • Git • GitHub • Vercel • AnyDesk • UltraViewer'
+    technologies: 'HTML5 • CSS3 • CMS Website Builder • Git • GitHub• AnyDesk • UltraViewer'
   },
   {
     role: 'Frontend Developer',
