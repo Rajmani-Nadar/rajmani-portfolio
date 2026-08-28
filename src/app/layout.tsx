@@ -11,22 +11,61 @@ const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grote
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'V. Rajmani Nadar | Frontend Web Platform Developer',
+  title: 'V. Rajmani Nadar | Frontend Developer • ERPNext & Frappe Developer',
   description:
-    'Frontend Web Platform Developer building fast, modern and elegant websites with React, Next.js and TypeScript.',
+    'Frontend Web Platform Developer specializing in React, Next.js, TypeScript, Tailwind CSS, ERPNext, Frappe Framework, CMS website development, dashboard customization, reusable frontend components, and business workflow interfaces.',
   metadataBase: new URL('https://rajmani-dev.vercel.app'),
+  alternates: {
+    canonical: 'https://rajmani-dev.vercel.app'
+  },
+  keywords: [
+    'Rajmani Nadar',
+    'V Rajmani',
+    'Frontend Developer India',
+    'React Developer',
+    'Next.js Developer',
+    'TypeScript Developer',
+    'Tailwind CSS Developer',
+    'ERPNext Developer',
+    'Frappe Framework Developer',
+    'CMS Website Developer',
+    'Business Website Developer',
+    'Dashboard UI Developer',
+    'Website Customization',
+    'Frontend Web Platform Developer',
+    'Software Application UI Developer',
+    'Remote Frontend Developer',
+    'India Frontend Developer',
+    'Chennai Frontend Developer',
+    'Portfolio Developer',
+    'Reusable UI Components',
+    'Business Workflow UI'
+  ],
   openGraph: {
-    title: 'V. Rajmani Nadar | Frontend Web Platform Developer',
-    description: 'Building fast, modern and elegant websites with React, Next.js and TypeScript.',
+    title: 'V. Rajmani Nadar — Frontend Web Platform Developer',
+    description: 'Building premium React, Next.js, ERPNext, Frappe, and CMS-powered web experiences.',
     url: 'https://rajmani-dev.vercel.app',
     siteName: 'V. Rajmani Portfolio',
     locale: 'en_US',
-    type: 'website'
+    type: 'website',
+    images: ['/images/og-image.png']
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'V. Rajmani Nadar | Frontend Web Platform Developer',
-    description: 'Building fast, modern and elegant websites with React, Next.js and TypeScript.'
+    title: 'V. Rajmani Nadar — Frontend Web Platform Developer',
+    description: 'Building premium React, Next.js, ERPNext, Frappe, and CMS-powered web experiences.',
+    images: ['/images/og-image.png']
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-video-preview': -1,
+      'max-snippet': -1
+    }
   },
   verification: {
     google: 'fxmTqqQEOTeQ9X7FVo88NkTNyjVEZWZFV6C-2yCYnQI'
