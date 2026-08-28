@@ -79,6 +79,7 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [hasOpenedLightbox, setHasOpenedLightbox] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
 
   const activeImage = images[activeIndex];
 
@@ -110,6 +111,20 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
   const showPrevious = () => setActiveIndex((current) => (current - 1 + images.length) % images.length);
   const showNext = () => setActiveIndex((current) => (current + 1) % images.length);
 
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(event.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStart === null) return;
+    const distance = event.changedTouches[0].clientX - touchStart;
+    if (Math.abs(distance) > 48) {
+      if (distance > 0) showPrevious();
+      else showNext();
+    }
+    setTouchStart(null);
+  };
+
   return (
     <>
       <div className="space-y-3">
@@ -139,7 +154,7 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 8 }}
                   transition={{ opacity: { duration: 0.25 }, y: { duration: 0.25 } }}
-                  className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#111111]/85 px-3 py-2 text-xs font-semibold text-[#f9d977] backdrop-blur-sm"
+                  className="pointer-events-none absolute bottom-4 right-4 hidden items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#111111]/85 px-3 py-2 text-xs font-semibold text-[#f9d977] shadow-[0_0_18px_rgba(212,175,55,0.18)] backdrop-blur-sm md:inline-flex md:opacity-0 md:transition-opacity md:group-hover:opacity-100"
                 >
                   <motion.span animate={{ y: [0, -3, 0] }} transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 1.2 }}>
                     <Hand className="h-4 w-4" />
@@ -188,6 +203,8 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
               transition={{ duration: 0.25 }}
               className="relative w-full max-w-6xl"
               onClick={(event) => event.stopPropagation()}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
               <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-[#D4AF37]/40 bg-zinc-950 shadow-2xl">
                 <Image src={activeImage} alt={title} fill className="object-contain object-center" sizes="100vw" />
