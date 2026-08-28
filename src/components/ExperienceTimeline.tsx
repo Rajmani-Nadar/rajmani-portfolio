@@ -20,7 +20,7 @@ const timeline = [
       'Explain dashboard features, CMS management, and Website Builder functionality in a simple, easy-to-understand way.',
       'Assist clients with website content updates, CMS usage, deployment support, and post-launch guidance.'
     ],
-    technologies: 'HTML5 • CSS3 • CMS Website Builder • Git • GitHub• AnyDesk • UltraViewer'
+    technologies: 'HTML5 • CSS3 • CMS Website Builder • Git • GitHub • AnyDesk • UltraViewer'
   },
   {
     role: 'Frontend Developer',
@@ -39,24 +39,6 @@ const timeline = [
     ],
     technologies: 'ERPNext • Frappe Framework • Strapi Headless CMS • React • Next.js • TypeScript • Tailwind CSS • HTML5 • CSS3 • Git • GitHub'
   },
-  {
-    role: 'Freelance Frontend Developer',
-    period: '2024 - 2025',
-    company: 'Independent Projects',
-    description: 'Delivered client-facing marketing sites and custom interfaces tailored around business goals and conversion needs.'
-  },
-  {
-    role: 'Client Website Development',
-    period: '2023 - 2024',
-    company: 'Various Clients',
-    description: 'Translated requirements into responsive, production-ready websites with CMS configuration and UI refinement.'
-  },
-  {
-    role: 'CMS Training Sessions',
-    period: '2023',
-    company: 'Learning & Knowledge Sharing',
-    description: 'Helped teams understand structured content workflows, editable systems, and efficient website operations.'
-  }
 ];
 
 const platformHighlight = {
