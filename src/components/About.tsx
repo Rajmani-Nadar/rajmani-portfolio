@@ -36,6 +36,10 @@ const storyCards = [
   {
     title: 'Performance matters',
     description: 'Every interface I build balances visual polish, accessibility, and speed so users get a premium product without friction.'
+  },
+  {
+    title: 'ERPNext & Frappe',
+    description: 'Building CMS-backed business platforms, customizing ERPNext interfaces, developing reusable dashboard components, and supporting business workflows through the Frappe Framework.'
   }
 ];
 
@@ -64,10 +68,13 @@ export function About() {
           className="rounded-[1.75rem] border border-white/10 bg-[#151515] p-6 sm:p-8"
         >
           <p className="mb-4 text-lg leading-8 text-white/75">
-            I&apos;m a Frontend Web Platform Developer focused on creating premium, conversion-friendly websites with a balance of visual elegance and product-level thinking.
+            I&apos;m a Frontend Web Platform Developer specializing in React, Next.js, TypeScript, and Tailwind CSS, building modern, responsive, and business-focused web experiences.
+          </p>
+          <p className="mb-4 text-base leading-7 text-white/65">
+            Alongside frontend development, I work with <strong className="font-semibold text-white/80">ERPNext</strong> and the <strong className="font-semibold text-white/80">Frappe Framework</strong> to customize CMS-backed business platforms, develop reusable frontend components, and build dashboard experiences that support real business workflows.
           </p>
           <p className="mb-6 text-base leading-7 text-white/65">
-            My work spans custom CMS website development, reusable React systems, and Next.js experiences designed for speed, structure, and clean business workflows.
+            My experience combines frontend engineering, CMS website development, ERPNext/Frappe customization, client support, dashboard training, and production-ready website deployment.
           </p>
 
           <div className="grid gap-4 md:grid-cols-3">

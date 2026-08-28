@@ -18,6 +18,10 @@ const skillGroups = [
   {
     title: 'Other',
     items: ['REST APIs', 'CMS Website Builder', 'Responsive Design', 'SEO Basics']
+  },
+  {
+    title: 'ERPNext & CMS Platforms',
+    items: ['ERPNext', 'Frappe Framework', 'CMS Website Builder', 'Dashboard Customization', 'CMS-safe HTML & CSS', 'Business Workflow UI', 'Client Support', 'Ticket Management']
   }
 ];
 

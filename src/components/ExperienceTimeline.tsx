@@ -6,8 +6,22 @@ const timeline = [
   {
     role: 'Web Platform Developer',
     period: 'Current',
-    company: 'Suraj Technologies Pvt Ltd',
-    description: 'Building polished product experiences, CMS-backed websites, and structured frontends for scalable delivery.'
+    company: 'JPencil Technologies',
+    description: 'Frontend Web Platform Developer working on CMS websites, ERPNext/Frappe business platforms, client support, dashboard customization, and website deployment.',
+    responsibilities: [
+      'Develop responsive websites using HTML, CSS, Tailwind CSS, React, Next.js, and TypeScript.',
+      'Build reusable CMS-safe HTML and CSS components compatible with the Website Builder and CMS environment.',
+      'Customize ERPNext and Frappe dashboards, web pages, and business interfaces.',
+      'Develop frontend UI for CMS-backed business websites and dashboard experiences.',
+      'Solve client website issues, frontend bugs, CMS-related issues, and UI improvements.',
+      'Open support tickets for client-reported issues and close tickets after successful resolution.',
+      'Track and update the status of client queries throughout the support process.',
+      'Send professional follow-up emails regarding issue updates, completed fixes, pending tasks, and training sessions.',
+      'Connect with clients using AnyDesk and UltraViewer to provide dashboard training and website guidance.',
+      'Explain dashboard features, CMS management, and Website Builder functionality in a simple, easy-to-understand way.',
+      'Assist clients with website content updates, CMS usage, deployment support, and post-launch guidance.'
+    ],
+    technologies: 'React • Next.js • TypeScript • Tailwind CSS • HTML5 • CSS3 • ERPNext • Frappe Framework • CMS Website Builder • Git • GitHub • Vercel • AnyDesk • UltraViewer'
   },
   {
     role: 'Freelance Frontend Developer',
@@ -29,6 +43,11 @@ const timeline = [
   }
 ];
 
+const platformHighlight = {
+  title: 'Business Platform Development',
+  description: 'Working with ERPNext and the Frappe Framework to build CMS-backed business platforms, customize dashboards, manage business workflows, solve client support requests, and deliver frontend experiences that integrate with real business operations.'
+};
+
 export function ExperienceTimeline() {
   return (
     <section id="experience" className="scroll-mt-28 py-8 sm:py-12">
@@ -38,6 +57,17 @@ export function ExperienceTimeline() {
           A steady path shaped by product work, client delivery, and frontend craft.
         </h2>
       </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 18 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.45 }}
+        className="mb-6 rounded-[1.5rem] border border-[#D4AF37]/20 bg-[#121212] p-5"
+      >
+        <h3 className="text-xl font-semibold text-white">{platformHighlight.title}</h3>
+        <p className="mt-2 text-base leading-7 text-white/70">{platformHighlight.description}</p>
+      </motion.div>
 
       <div className="relative before:absolute before:left-5 before:top-0 before:h-full before:w-px before:bg-[#D4AF37]/20 sm:before:left-1/2">
         <div className="space-y-6">
@@ -62,6 +92,17 @@ export function ExperienceTimeline() {
                 </div>
                 <p className="mb-3 text-sm font-medium text-white/60">{item.company}</p>
                 <p className="text-base leading-7 text-white/70">{item.description}</p>
+                {item.responsibilities && (
+                  <ul className="mt-4 space-y-2 text-sm leading-6 text-white/65">
+                    {item.responsibilities.map((responsibility) => (
+                      <li key={responsibility} className="flex gap-2">
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4AF37]" />
+                        <span>{responsibility}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+                {item.technologies && <p className="mt-4 border-t border-white/10 pt-4 text-sm leading-6 text-[#f9d977]">Technologies: {item.technologies}</p>}
               </div>
             </motion.div>
           ))}

@@ -32,7 +32,9 @@ export const metadata: Metadata = {
     google: 'fxmTqqQEOTeQ9X7FVo88NkTNyjVEZWZFV6C-2yCYnQI'
   },
   icons: {
-    icon: '/favicon.ico'
+    icon: '/images/favicon.png',
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png'
   }
 };
 

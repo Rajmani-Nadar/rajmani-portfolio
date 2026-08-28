@@ -122,7 +122,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-2 pt-2 text-xs font-medium text-white/60">
-            {['React', 'Next.js', 'TypeScript', 'Tailwind', 'CMS', 'SEO'].map((item) => (
+            {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'ERPNext', 'Frappe Framework', 'CMS', 'SEO'].map((item) => (
               <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
                 {item}
               </span>
