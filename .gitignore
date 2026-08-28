@@ -22,3 +22,5 @@ production
 
 # vscode
 .vscode
+
+tsconfig.tsbuildinfo
