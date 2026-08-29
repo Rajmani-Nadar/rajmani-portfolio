@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Script from 'next/script';
 
 const timeline = [
   {
@@ -48,7 +49,18 @@ const platformHighlight = {
 
 export function ExperienceTimeline() {
   return (
-    <section id="experience" className="scroll-mt-28 py-8 sm:py-12">
+    <>
+      <Script id="experience-breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rajmani-dev.vercel.app/' },
+            { '@type': 'ListItem', position: 2, name: 'Experience', item: 'https://rajmani-dev.vercel.app/experience' }
+          ]
+        })}
+      </Script>
+      <section id="experience" className="scroll-mt-28 py-8 sm:py-12">
       <div className="mb-8">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Experience</p>
         <h2 className="text-3xl font-bold tracking-[-0.05em] text-white sm:text-4xl">
@@ -106,6 +118,7 @@ export function ExperienceTimeline() {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

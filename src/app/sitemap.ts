@@ -1,9 +1,10 @@
 import type { MetadataRoute } from 'next';
+import { blogArticles } from '@/lib/blog';
 
 const baseUrl = 'https://rajmani-dev.vercel.app';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ['', '/about', '/projects', '/experience', '/contact'];
+  const routes = ['', '/about', '/projects', '/experience', '/contact', '/blog', ...blogArticles.map((article) => `/blog/${article.slug}`)];
   const lastModified = new Date();
 
   return routes.map((route) => ({

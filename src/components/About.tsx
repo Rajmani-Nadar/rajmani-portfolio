@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowUpRight, BriefcaseBusiness, HeartHandshake, Sparkles } from 'lucide-react';
 import Image from 'next/image';
+import Script from 'next/script';
 
 const stats = [
   { value: '1+', label: 'Years Experience' },
@@ -45,7 +46,18 @@ const storyCards = [
 
 export function About() {
   return (
-    <section id="about" className="scroll-mt-28 py-8 sm:py-12">
+    <>
+      <Script id="about-breadcrumb-schema" type="application/ld+json">
+        {JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rajmani-dev.vercel.app/' },
+            { '@type': 'ListItem', position: 2, name: 'About', item: 'https://rajmani-dev.vercel.app/about' }
+          ]
+        })}
+      </Script>
+      <section id="about" className="scroll-mt-28 py-8 sm:py-12">
       <div className="mb-8 flex items-end justify-between gap-4">
         <div>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">About</p>
@@ -169,6 +181,7 @@ export function About() {
           </motion.div>
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

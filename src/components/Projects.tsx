@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, ArrowUpRight, GitBranch, Hand, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import Script from 'next/script';
 import { useEffect, useState } from 'react';
 
 const featuredProjects = [
@@ -228,8 +229,45 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
 }
 
 export function Projects() {
+  const projectSchemas = [
+    ...featuredProjects.map((project) => ({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareSourceCode',
+      name: project.title,
+      description: project.description,
+      programmingLanguage: project.tech,
+      codeRepository: project.github,
+      applicationCategory: 'WebApplication',
+      author: { '@type': 'Person', name: 'V. Rajmani Nadar' }
+    })),
+    ...moreProjects.map((project) => ({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareSourceCode',
+      name: project.title,
+      description: project.description,
+      programmingLanguage: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+      codeRepository: project.github,
+      applicationCategory: 'WebApplication',
+      author: { '@type': 'Person', name: 'V. Rajmani Nadar' }
+    }))
+  ];
+
   return (
-    <section id="projects" className="scroll-mt-28 py-8 sm:py-12">
+    <>
+      <Script id="projects-structured-data" type="application/ld+json">
+        {JSON.stringify([
+          ...projectSchemas,
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://rajmani-dev.vercel.app/' },
+              { '@type': 'ListItem', position: 2, name: 'Projects', item: 'https://rajmani-dev.vercel.app/projects' }
+            ]
+          }
+        ])}
+      </Script>
+      <section id="projects" className="scroll-mt-28 py-8 sm:py-12">
       <div className="mb-8">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Case Studies</p>
         <h2 className="text-3xl font-bold tracking-[-0.05em] text-white sm:text-4xl">
@@ -336,6 +374,7 @@ export function Projects() {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }
