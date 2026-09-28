@@ -18,16 +18,16 @@ export function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 mb-8 sm:mb-10">
-      <div className="rounded-full border border-white/10 bg-[#111111]/75 px-3 py-2.5 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.35)] ring-1 ring-white/5">
+    <header className="fixed inset-x-0 top-0 z-50 px-4 pt-5 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl rounded-full border border-border/15 bg-surface/80 px-3 py-2.5 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.12)] ring-1 ring-border/10">
         <div className="flex items-center justify-between gap-3">
-          <Link href="/" className="flex items-center gap-2 text-sm font-semibold tracking-tight text-white">
+          <Link href="/" className="flex items-center gap-2 text-sm font-semibold tracking-tight text-foreground">
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-[#D4AF37] to-[#f8d974] text-sm font-bold text-[#111] shadow-[0_0_24px_rgba(212,175,55,0.35)]">
               VR
             </span>
             <div className="leading-tight">
-              <div className="text-sm font-semibold text-white">V. Rajmani</div>
-              <div className="text-[10px] uppercase tracking-[0.14em] text-white/50">Frontend Developer</div>
+              <div className="text-sm font-semibold text-foreground">V. Rajmani</div>
+              <div className="text-[10px] uppercase tracking-[0.14em] text-foreground/50">Frontend Developer</div>
             </div>
           </Link>
 
@@ -40,7 +40,7 @@ export function NavBar() {
                     key={link.href}
                     href={link.href}
                     className={`rounded-full px-3 py-2 text-sm transition ${
-                      active ? 'bg-[#D4AF37]/10 text-[#f9d977]' : 'text-white/70 hover:text-white'
+                      active ? 'bg-[#D4AF37]/10 text-[#f9d977]' : 'text-foreground/70 hover:text-foreground'
                     }`}
                   >
                     {link.label}
@@ -57,7 +57,7 @@ export function NavBar() {
 
             <ThemeToggle />
             <button
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white sm:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-border/15 bg-foreground/5 text-foreground sm:hidden"
               onClick={() => setOpen(!open)}
               aria-label="Toggle navigation"
             >
@@ -70,12 +70,12 @@ export function NavBar() {
       </div>
 
       {open && (
-        <div className="mt-3 space-y-2 rounded-[1.35rem] border border-white/10 bg-[#111111]/90 p-3 backdrop-blur-xl sm:hidden">
+        <div className="mt-3 space-y-2 rounded-[1.35rem] border border-border/15 bg-surface/90 p-3 backdrop-blur-xl sm:hidden">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 px-3 py-2.5 text-sm text-white/80"
+              className="flex items-center justify-between rounded-2xl border border-border/15 bg-foreground/5 px-3 py-2.5 text-sm text-foreground/80"
               onClick={() => setOpen(false)}
             >
               <span>{link.label}</span>

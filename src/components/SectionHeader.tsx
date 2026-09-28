@@ -13,7 +13,7 @@ export function SectionHeader({ eyebrow, title, subtitle }: Props) {
           {eyebrow}
         </div>
       )}
-      <h2 className="text-2xl sm:text-3xl font-semibold text-white">{title}</h2>
+      <h2 className="text-2xl sm:text-3xl font-semibold text-foreground">{title}</h2>
       {subtitle && <p className="text-muted max-w-2xl text-sm sm:text-base">{subtitle}</p>}
     </div>
   );

@@ -27,7 +27,7 @@ export function ProjectCard({ title, description, meta, stack, architecture, liv
     >
       <div className="flex flex-col gap-2 sm:gap-3">
         <div className="flex flex-wrap items-center gap-2 sm:gap-3">
-          <h3 className="text-lg sm:text-xl font-semibold text-white">{title}</h3>
+          <h3 className="text-lg sm:text-xl font-semibold text-foreground">{title}</h3>
           <Badge className="w-fit whitespace-nowrap px-3 py-1.5 text-[11px] leading-none">
             {meta}
           </Badge>
@@ -37,7 +37,7 @@ export function ProjectCard({ title, description, meta, stack, architecture, liv
 
       <div className="flex flex-wrap gap-2">
         {stack.map((item) => (
-          <span key={item} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted border border-white/5">
+          <span key={item} className="rounded-full bg-foreground/5 px-3 py-1 text-xs text-muted border border-border/15">
             {item}
           </span>
         ))}
@@ -73,7 +73,7 @@ export function ProjectCard({ title, description, meta, stack, architecture, liv
       )}
 
       {architecture && (
-        <p className="text-xs text-muted leading-relaxed border-t border-white/5 pt-3">
+        <p className="text-xs text-muted leading-relaxed border-t border-border/15 pt-3">
           Architecture: {architecture}
         </p>
       )}

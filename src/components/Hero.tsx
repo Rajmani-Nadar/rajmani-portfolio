@@ -54,7 +54,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/20 bg-[#101010]/90 px-5 py-8 shadow-[0_0_50px_rgba(212,175,55,0.08)] sm:px-8 sm:py-10 lg:px-12 lg:py-14"
+      className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/20 bg-surface/95 px-5 py-8 shadow-[0_0_50px_rgba(212,175,55,0.08)] sm:px-8 sm:py-10 lg:px-12 lg:py-14"
       onMouseMove={handlePointerMove}
     >
       <div
@@ -78,21 +78,21 @@ export function Hero() {
           </div>
 
           <div className="space-y-4">
-            <h1 className="font-grotesk text-4xl font-bold leading-[0.96] tracking-[-0.06em] text-white sm:text-5xl lg:text-7xl">
+            <h1 className="font-grotesk text-4xl font-bold leading-[0.96] tracking-[-0.06em] text-foreground sm:text-5xl lg:text-7xl">
               Hi, I&apos;m{' '}
               <span className="bg-gradient-to-r from-[#f7e7b2] via-[#D4AF37] to-[#f8d974] bg-clip-text text-transparent">
                 V. Rajmani Nadar
               </span>
             </h1>
 
-            <div className="flex min-h-[2.8rem] items-center gap-2 text-xl font-medium text-white/90 sm:text-2xl">
-              <span className="text-[#d7d7d7]">I build</span>
+            <div className="flex min-h-[2.8rem] items-center gap-2 text-xl font-medium text-foreground/90 sm:text-2xl">
+              <span className="text-foreground/80">I build</span>
               <span className="min-w-[10ch] text-[#D4AF37]">{text}</span>
               <span className="animate-pulse text-[#D4AF37]">|</span>
             </div>
           </div>
 
-          <p className="max-w-xl text-base leading-7 text-white/70 sm:text-lg">
+          <p className="max-w-xl text-base leading-7 text-foreground/70 sm:text-lg">
             Building fast, modern and elegant websites with React, Next.js and TypeScript. I design premium digital experiences that feel polished, convert better, and perform beautifully on every screen.
           </p>
 
@@ -115,15 +115,15 @@ export function Hero() {
 
             <Link
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:text-[#f9d977]"
+              className="inline-flex items-center gap-2 rounded-xl border border-border/15 bg-transparent px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:text-[#f9d977]"
             >
               Contact Me
             </Link>
           </div>
 
-          <div className="flex flex-wrap gap-2 pt-2 text-xs font-medium text-white/60">
+          <div className="flex flex-wrap gap-2 pt-2 text-xs font-medium text-foreground/60">
             {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'ERPNext', 'Frappe Framework', 'CMS', 'SEO'].map((item) => (
-              <span key={item} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5">
+              <span key={item} className="rounded-full border border-border/15 bg-foreground/5 px-3 py-1.5">
                 {item}
               </span>
             ))}
@@ -136,14 +136,14 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.1, ease: 'easeOut' }}
           className="relative"
         >
-          <div className="relative overflow-hidden rounded-[1.75rem] border border-[#D4AF37]/20 bg-gradient-to-br from-white/10 via-[#171717] to-[#0f0f0f] p-5 shadow-[0_25px_80px_rgba(0,0,0,0.55)]">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.2),transparent_30%),radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.1),transparent_25%)]" />
+          <div className="relative overflow-hidden rounded-[1.75rem] border border-[#D4AF37]/20 bg-gradient-to-br from-foreground/5 via-surface to-background p-5 shadow-[0_25px_80px_rgba(0,0,0,0.12)]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(212,175,55,0.12),transparent_30%),radial-gradient(circle_at_70%_80%,rgba(15,23,42,0.08),transparent_25%)]" />
 
             <div className="relative space-y-5">
-              <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/20 p-4">
+              <div className="flex items-center justify-between rounded-2xl border border-border/15 bg-surface/80 p-4">
                 <div>
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/45">Current Role</p>
-                  <p className="mt-2 text-lg font-semibold text-white">Frontend Developer</p>
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-foreground/45">Current Role</p>
+                  <p className="mt-2 text-lg font-semibold text-foreground">Frontend Developer</p>
                 </div>
                 <div className="rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 px-3 py-1 text-xs font-semibold text-[#f9d977]">
                   Available
@@ -151,16 +151,16 @@ export function Hero() {
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/45">Experience</p>
-                  <p className="mt-3 text-3xl font-bold text-white">1+ </p>
-                  <p className="text-sm text-white/60">Years building modern interfaces.</p>
+                <div className="rounded-2xl border border-border/15 bg-foreground/5 p-4">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-foreground/45">Experience</p>
+                  <p className="mt-3 text-3xl font-bold text-foreground">1.5+ </p>
+                  <p className="text-sm text-foreground/60">Years building modern interfaces.</p>
                 </div>
 
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-white/45">Projects</p>
-                  <p className="mt-3 text-3xl font-bold text-white">15+</p>
-                  <p className="text-sm text-white/60">Responsive and SEO-focused builds.</p>
+                <div className="rounded-2xl border border-border/15 bg-foreground/5 p-4">
+                  <p className="text-[10px] uppercase tracking-[0.18em] text-foreground/45">Projects</p>
+                  <p className="mt-3 text-3xl font-bold text-foreground">15+</p>
+                  <p className="text-sm text-foreground/60">Responsive and SEO-focused builds.</p>
                 </div>
               </div>
 
@@ -170,9 +170,9 @@ export function Hero() {
                   <GitBranch className="h-4 w-4 text-[#f9d977]" />
                 </div>
 
-                <div className="flex flex-wrap gap-2 text-xs text-white/75">
+                <div className="flex flex-wrap gap-2 text-xs text-foreground/75">
                   {['Next.js', 'React', 'TypeScript', 'Tailwind', 'CMS', 'REST APIs'].map((tech) => (
-                    <span key={tech} className="rounded-full border border-white/10 bg-black/20 px-2.5 py-1.5">
+                    <span key={tech} className="rounded-full border border-border/15 bg-background/80 px-2.5 py-1.5">
                       {tech}
                     </span>
                   ))}
@@ -183,7 +183,7 @@ export function Hero() {
         </motion.div>
       </motion.div>
 
-      <div className="relative mt-10 flex justify-center text-white/55">
+      <div className="relative mt-10 flex justify-center text-foreground/55">
         <div className="flex flex-col items-center gap-2 text-[11px] uppercase tracking-[0.24em]">
           <Mouse className="h-4 w-4" />
           Scroll

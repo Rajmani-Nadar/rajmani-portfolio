@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Script from 'next/script';
 
 const stats = [
-  { value: '1+', label: 'Years Experience' },
+  { value: '1.5+', label: 'Years Experience' },
   { value: '15+', label: 'Projects Delivered' },
   { value: 'Next.js', label: 'Next.js Specialist' },
   { value: '100%', label: 'Responsive Design' },
@@ -61,7 +61,7 @@ export function About() {
       <div className="mb-8 flex items-end justify-between gap-4">
         <div>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">About</p>
-          <h2 className="text-3xl font-bold tracking-[-0.05em] text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
             Building elegant digital experiences that feel premium and work hard.
           </h2>
         </div>
@@ -77,15 +77,15 @@ export function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.5 }}
-          className="rounded-[1.75rem] border border-white/10 bg-[#151515] p-6 sm:p-8"
+          className="rounded-[1.75rem] border border-border/15 bg-surface/90 p-6 shadow-card sm:p-8"
         >
-          <p className="mb-4 text-lg leading-8 text-white/75">
+          <p className="mb-4 text-lg leading-8 text-foreground/75">
             I&apos;m a Frontend Web Platform Developer specializing in React, Next.js, TypeScript, and Tailwind CSS, building modern, responsive, and business-focused web experiences.
           </p>
-          <p className="mb-4 text-base leading-7 text-white/65">
-            Alongside frontend development, I work with <strong className="font-semibold text-white/80">ERPNext</strong> and the <strong className="font-semibold text-white/80">Frappe Framework</strong> to customize CMS-backed business platforms, develop reusable frontend components, and build dashboard experiences that support real business workflows.
+          <p className="mb-4 text-base leading-7 text-foreground/65">
+            Alongside frontend development, I work with <strong className="font-semibold text-foreground/80">ERPNext</strong> and the <strong className="font-semibold text-foreground/80">Frappe Framework</strong> to customize CMS-backed business platforms, develop reusable frontend components, and build dashboard experiences that support real business workflows.
           </p>
-          <p className="mb-6 text-base leading-7 text-white/65">
+          <p className="mb-6 text-base leading-7 text-foreground/65">
             My experience combines frontend engineering, CMS website development, ERPNext/Frappe customization, client support, dashboard training, and production-ready website deployment.
           </p>
 
@@ -93,21 +93,21 @@ export function About() {
             {storyCards.map((card, index) => (
               <div
                 key={card.title}
-                className="rounded-2xl border border-white/10 bg-[#111111] p-4 transition hover:-translate-y-1 hover:border-[#D4AF37]/30"
+                className="rounded-2xl border border-border/15 bg-background/80 p-4 transition hover:-translate-y-1 hover:border-[#D4AF37]/30"
                 style={{ animationDelay: `${index * 120}ms` }}
               >
                 <div className="mb-3 inline-flex rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 p-2 text-[#f9d977]">
                   {index === 0 ? <HeartHandshake className="h-4 w-4" /> : index === 1 ? <BriefcaseBusiness className="h-4 w-4" /> : <ArrowUpRight className="h-4 w-4" />}
                 </div>
-                <h3 className="mb-2 text-base font-semibold text-white">{card.title}</h3>
-                <p className="text-sm leading-6 text-white/65">{card.description}</p>
+                <h3 className="mb-2 text-base font-semibold text-foreground">{card.title}</h3>
+                <p className="text-sm leading-6 text-foreground/65">{card.description}</p>
               </div>
             ))}
           </div>
 
           <div className="mt-8">
-            <h3 className="text-xl font-semibold text-white">Recent Work</h3>
-            <p className="mt-2 text-sm text-white/60">Healthcare • Waterproofing • E-Commerce • Business Landing Pages</p>
+            <h3 className="text-xl font-semibold text-foreground">Recent Work</h3>
+            <p className="mt-2 text-sm text-foreground/60">Healthcare • Waterproofing • E-Commerce • Business Landing Pages</p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {recentWork.map((project) => (
                 <motion.a
@@ -115,7 +115,7 @@ export function About() {
                   href={project.target}
                   whileHover={{ scale: 1.04 }}
                   transition={{ duration: 0.2 }}
-                  className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D4AF37]/25 bg-[#111111] shadow-[0_0_0_rgba(212,175,55,0)] transition-shadow hover:shadow-[0_0_20px_rgba(212,175,55,0.18)]"
+                  className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-[#D4AF37]/25 bg-background shadow-[0_0_0_rgba(212,175,55,0)] transition-shadow hover:shadow-[0_0_20px_rgba(212,175,55,0.18)]"
                 >
                   <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width:640px) 50vw, 25vw" />
                   <span className="absolute inset-x-0 bottom-0 bg-black/65 px-2 py-2 text-xs font-medium text-white opacity-0 transition-opacity group-hover:opacity-100">
@@ -136,10 +136,10 @@ export function About() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.45 }}
               whileHover={{ y: -4 }}
-              className="flex min-h-28 flex-col justify-center rounded-2xl border border-[#D4AF37]/20 bg-[#111111] p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
+              className="flex min-h-28 flex-col justify-center rounded-2xl border border-[#D4AF37]/20 bg-background/80 p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
             >
               <p className="text-2xl font-bold text-[#D4AF37]">{stat.value}</p>
-              <p className="mt-2 text-sm text-white/60">{stat.label}</p>
+              <p className="mt-2 text-sm text-foreground/60">{stat.label}</p>
             </motion.div>
           ))}
 
@@ -149,12 +149,12 @@ export function About() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45 }}
             whileHover={{ y: -4 }}
-            className="col-span-2 rounded-2xl border border-[#D4AF37]/20 bg-[#111111] p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
+            className="col-span-2 rounded-2xl border border-[#D4AF37]/20 bg-background/80 p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
           >
             <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#f9d977]">Currently Working With</h3>
             <div className="mt-4 flex flex-wrap gap-2">
               {currentTechnologies.map((technology) => (
-                <span key={technology} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/70">
+                <span key={technology} className="rounded-full border border-border/15 bg-foreground/5 px-3 py-1.5 text-xs text-foreground/70">
                   {technology}
                 </span>
               ))}
@@ -167,10 +167,10 @@ export function About() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.45 }}
             whileHover={{ y: -4 }}
-            className="col-span-2 rounded-2xl border border-[#D4AF37]/20 bg-[#111111] p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
+            className="col-span-2 rounded-2xl border border-[#D4AF37]/20 bg-background/80 p-4 transition-shadow hover:shadow-[0_0_24px_rgba(212,175,55,0.12)] sm:p-5"
           >
             <h3 className="text-sm font-semibold uppercase tracking-[0.16em] text-[#f9d977]">Focus Areas</h3>
-            <ul className="mt-4 grid gap-2 text-sm text-white/70 sm:grid-cols-2">
+            <ul className="mt-4 grid gap-2 text-sm text-foreground/70 sm:grid-cols-2">
               {focusAreas.map((area) => (
                 <li key={area} className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />

@@ -28,7 +28,7 @@ Email: ${data.get('email')}`);
             <input
               required
               name="name"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white focus:border-accent outline-none"
+              className="w-full rounded-xl border border-border/15 bg-foreground/5 px-3 py-2 text-foreground focus:border-accent outline-none"
               placeholder="Your name"
             />
           </label>
@@ -38,7 +38,7 @@ Email: ${data.get('email')}`);
               required
               type="email"
               name="email"
-              className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white focus:border-accent outline-none"
+              className="w-full rounded-xl border border-border/15 bg-foreground/5 px-3 py-2 text-foreground focus:border-accent outline-none"
               placeholder="you@example.com"
             />
           </label>
@@ -49,7 +49,7 @@ Email: ${data.get('email')}`);
             required
             name="message"
             rows={5}
-            className="w-full rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-white focus:border-accent outline-none"
+            className="w-full rounded-xl border border-border/15 bg-foreground/5 px-3 py-2 text-foreground focus:border-accent outline-none"
             placeholder="Project goals, timeline, and context"
           />
         </label>
@@ -65,14 +65,14 @@ Email: ${data.get('email')}`);
       <div className="section-shell p-6 space-y-4">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-accent font-semibold">Reach me</p>
-          <h3 className="text-xl font-semibold text-white">Contact details</h3>
+          <h3 className="text-xl font-semibold text-foreground">Contact details</h3>
         </div>
         <div className="space-y-3 text-sm text-muted">
           <p>Email: <a className="text-accent hover:text-accent2" href="mailto:rajmaninadar2000@gmail.com">rajmaninadar2000@gmail.com</a></p>
           <p>GitHub: <a className="text-accent hover:text-accent2" href="https://github.com/Rajmani-Nadar?tab=repositories" target="_blank" rel="noreferrer">github.com/Rajmani-Nadar</a></p>
           <p>LinkedIn: <a className="text-accent hover:text-accent2" href="https://linkedin.com/in/rajmani-v-5a550b233" target="_blank" rel="noreferrer">linkedin.com/in/rajmani-v-5a550b233</a></p>
         </div>
-        <div className="rounded-2xl border border-white/5 bg-white/5 p-4 text-sm text-muted">
+        <div className="rounded-2xl border border-border/15 bg-foreground/5 p-4 text-sm text-muted">
           Prefer async communication. Share context, timeline, and decision-makers—I'll reply with a plan and estimate.
         </div>
       </div>

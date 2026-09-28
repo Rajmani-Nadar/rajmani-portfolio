@@ -19,21 +19,21 @@ export function ContactSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.45 }}
-        className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/20 bg-gradient-to-br from-[#0f0f0f] via-[#171717] to-[#111111] p-6 sm:p-8"
+        className="relative overflow-hidden rounded-[2rem] border border-[#D4AF37]/20 bg-gradient-to-br from-background via-surface to-surface/90 p-6 shadow-card sm:p-8"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.06),transparent_20%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.12),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(15,23,42,0.06),transparent_20%)]" />
 
         <div className="relative grid gap-7 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Contact</p>
-            <h2 className="text-3xl font-bold tracking-[-0.05em] text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
               Let&apos;s build a premium web experience for your brand.
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-7 text-white/70">
+            <p className="mt-4 max-w-xl text-base leading-7 text-foreground/70">
               Whether you need a polished business site, a CMS-driven marketing platform, or a modern React/Next.js frontend, I can help turn the idea into something elegant and performant.
             </p>
 
-            <div className="mt-6 flex items-center gap-2 text-sm text-white/70">
+            <div className="mt-6 flex items-center gap-2 text-sm text-foreground/70">
               <MapPin className="h-4 w-4 text-[#D4AF37]" />
               Tamil Nadu, India
             </div>
@@ -59,7 +59,7 @@ export function ContactSection() {
                   href={item.href}
                   target={item.href.startsWith('http') ? '_blank' : undefined}
                   rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                  className="flex items-center justify-between rounded-2xl border border-white/10 bg-white/5 p-4 text-white transition hover:-translate-y-0.5 hover:border-[#D4AF37]/30 hover:bg-[#D4AF37]/5"
+                  className="flex items-center justify-between rounded-2xl border border-border/15 bg-foreground/5 p-4 text-foreground transition hover:-translate-y-0.5 hover:border-[#D4AF37]/30 hover:bg-[#D4AF37]/5"
                 >
                   <div className="flex items-center gap-3">
                     <span className="inline-flex rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 p-2 text-[#f9d977]">
@@ -67,7 +67,7 @@ export function ContactSection() {
                     </span>
                     <span className="font-medium">{item.label}</span>
                   </div>
-                  <span className="text-white/45">→</span>
+                  <span className="text-foreground/45">→</span>
                 </Link>
               );
             })}

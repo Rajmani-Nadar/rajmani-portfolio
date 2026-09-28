@@ -81,7 +81,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
-      <body className="min-h-screen bg-[#0B0B0B] text-white antialiased transition-colors duration-300">
+      <body className="min-h-screen bg-background text-foreground antialiased transition-colors duration-300">
         <ThemeProvider>
           <Script id="person-schema" type="application/ld+json">
             {JSON.stringify({
@@ -146,14 +146,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </Script>
           <ScrollProgress />
           <div className="relative overflow-hidden">
-            <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.12),transparent_25%),radial-gradient(circle_at_80%_0,rgba(255,255,255,0.08),transparent_25%)]" />
-            <div className="pointer-events-none fixed inset-0 bg-grid opacity-30" />
-            <div className="relative z-10 mx-auto max-w-6xl px-4 pb-8 pt-5 sm:px-6 lg:px-8 lg:pt-8">
-              <NavBar />
-              <PageTransition>{children}</PageTransition>
-              <Footer />
-            </div>
-          </div>
+  <div className="pointer-events-none fixed inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(212,175,55,0.12),transparent_25%),radial-gradient(circle_at_80%_0,rgba(255,255,255,0.08),transparent_25%)]" />
+  <div className="pointer-events-none fixed inset-0 bg-grid opacity-30" />
+
+  <div className="relative z-10 mx-auto max-w-[90rem] px-2 pb-8 pt-24 sm:px-3 sm:pt-28 lg:px-4 lg:pt-32">
+    <NavBar />
+    <PageTransition>{children}</PageTransition>
+    <Footer />
+  </div>
+</div>
         </ThemeProvider>
       </body>
     </html>

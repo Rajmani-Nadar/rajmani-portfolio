@@ -8,7 +8,9 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     <NextThemesProvider
       attribute="class"
       defaultTheme="dark"
-      enableSystem
+      enableSystem={false}
+      themes={['light', 'dark']}
+      storageKey="rajmani-portfolio-theme"
       enableColorScheme={false}
       disableTransitionOnChange={false}
     >

@@ -16,7 +16,7 @@ export function Services() {
     <section id="services" className="scroll-mt-28 py-8 sm:py-12">
       <div className="mb-8">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Services</p>
-        <h2 className="text-3xl font-bold tracking-[-0.05em] text-white sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
           Straightforward services for businesses that want a better web presence.
         </h2>
       </div>
@@ -33,13 +33,13 @@ export function Services() {
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.45, delay: index * 0.07 }}
               whileHover={{ y: -6 }}
-              className="rounded-[1.5rem] border border-white/10 bg-[#121212] p-5"
+              className="rounded-[1.5rem] border border-border/15 bg-surface/90 p-5 shadow-card"
             >
               <div className="mb-4 inline-flex rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 p-3 text-[#f9d977]">
                 <Icon className="h-5 w-5" />
               </div>
-              <h3 className="mb-3 text-lg font-semibold text-white">{service.title}</h3>
-              <p className="text-sm leading-6 text-white/65">{service.description}</p>
+              <h3 className="mb-3 text-lg font-semibold text-foreground">{service.title}</h3>
+              <p className="text-sm leading-6 text-foreground/70">{service.description}</p>
             </motion.div>
           );
         })}

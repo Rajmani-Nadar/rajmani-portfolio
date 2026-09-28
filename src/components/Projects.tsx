@@ -270,7 +270,7 @@ export function Projects() {
       <section id="projects" className="scroll-mt-28 py-8 sm:py-12">
       <div className="mb-8">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Case Studies</p>
-        <h2 className="text-3xl font-bold tracking-[-0.05em] text-white sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
           Featured work designed for business impact and product clarity.
         </h2>
       </div>
@@ -284,7 +284,7 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#151515]"
+            className="overflow-hidden rounded-[1.75rem] border border-border/15 bg-surface/90"
           >
             <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
               <FeaturedProjectGallery title={project.title} images={project.gallery} />
@@ -292,17 +292,17 @@ export function Projects() {
               <div className="p-6 sm:p-7">
                 <div className="mb-4 flex flex-wrap gap-2">
                   {project.tech.map((item) => (
-                    <span key={item} className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] text-white/70">
+                    <span key={item} className="rounded-full border border-border/15 bg-foreground/5 px-2.5 py-1 text-[11px] text-foreground/70">
                       {item}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white">{project.title}</h3>
+                <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
                 <p className="mt-3 text-lg text-[#D4AF37]">{project.summary}</p>
-                <p className="mt-4 max-w-xl text-base leading-7 text-white/65">{project.description}</p>
+                <p className="mt-4 max-w-xl text-base leading-7 text-foreground/65">{project.description}</p>
 
-                <ul className="mt-5 space-y-2 text-sm text-white/75">
+                <ul className="mt-5 space-y-2 text-sm text-foreground/75">
                   {project.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
@@ -325,7 +325,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-[#D4AF37]/30 hover:text-[#f9d977]"
+                    className="inline-flex items-center gap-2 rounded-xl border border-border/15 bg-foreground/5 px-4 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-[#D4AF37]/30 hover:text-[#f9d977]"
                   >
                     <GitBranch className="h-4 w-4" />
                     GitHub
@@ -347,25 +347,25 @@ export function Projects() {
             <motion.div
               key={project.title}
               whileHover={{ y: -6 }}
-              className={`group relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-gradient-to-br ${project.accent} p-[1px]`}
+              className={`group relative overflow-hidden rounded-[1.5rem] border border-border/15 bg-gradient-to-br ${project.accent} p-[1px]`}
             >
-              <div className="h-full rounded-[1.45rem] border border-white/10 bg-[#111111] p-5">
+              <div className="h-full rounded-[1.45rem] border border-border/15 bg-surface/90 p-5">
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-white/60">
+                  <span className="rounded-full border border-border/15 bg-foreground/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-foreground/60">
                     {project.category}
                   </span>
                   <div className="h-2.5 w-2.5 rounded-full bg-[#D4AF37]" />
                 </div>
-                <h3 className="text-xl font-semibold text-white">{project.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-white/65">{project.description}</p>
-                <div className="relative mt-5 aspect-video overflow-hidden rounded-2xl border border-white/10">
+                <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-foreground/65">{project.description}</p>
+                <div className="relative mt-5 aspect-video overflow-hidden rounded-2xl border border-border/15">
                   <Image src={project.image} alt={`${project.title} homepage`} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
                 </div>
                 <div className="mt-5 flex flex-wrap gap-3">
                   <Link href={project.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#e6c55c]">
                     Live Demo <ArrowUpRight className="h-4 w-4" />
                   </Link>
-                  <Link href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-[#f9d977]">
+                  <Link href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-[#f9d977]">
                     <GitBranch className="h-4 w-4" /> GitHub
                   </Link>
                 </div>
