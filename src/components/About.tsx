@@ -7,7 +7,7 @@ import Script from 'next/script';
 
 const stats = [
   { value: '1.5+', label: 'Years Experience' },
-  { value: '15+', label: 'Projects Delivered' },
+  { value: '16+', label: 'Projects Delivered' },
   { value: 'Next.js', label: 'Next.js Specialist' },
   { value: '100%', label: 'Responsive Design' },
   { value: '5', label: 'Live Websites' },
@@ -19,6 +19,7 @@ const currentTechnologies = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', '
 const focusAreas = ['Responsive UI Development', 'CMS Website Builder', 'Business Websites', 'Performance & SEO Optimization'];
 
 const recentWork = [
+  { title: 'QRForge', image: '/images/qrforge.svg', target: '#featured-qrforge' },
   { title: 'Ragini Diagnostics', image: '/images/ragini-home.png', target: '#featured-ragini-diagnostics' },
   { title: 'Hariharan Waterproofing', image: '/images/hariharan-home.png', target: '#featured-hariharan-waterproofing' },
   { title: 'Grocery E-Commerce', image: '/images/grocery-home.png', target: '#featured-grocery-e-commerce' },
@@ -107,7 +108,7 @@ export function About() {
 
           <div className="mt-8">
             <h3 className="text-xl font-semibold text-foreground">Recent Work</h3>
-            <p className="mt-2 text-sm text-foreground/60">Healthcare • Waterproofing • E-Commerce • Business Landing Pages</p>
+            <p className="mt-2 text-sm text-foreground/60">QR Tools • Healthcare • E-Commerce • Business Platforms</p>
             <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
               {recentWork.map((project) => (
                 <motion.a

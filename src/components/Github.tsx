@@ -5,6 +5,7 @@ import { ArrowUpRight, GitBranch, Star } from 'lucide-react';
 import Link from 'next/link';
 
 const repositories = [
+  { title: 'QRForge', description: 'Free browser-based QR code generator with multiple QR formats, customization, frames, and PNG/SVG export.', tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'], href: 'https://github.com/Rajmani-Nadar/qr-code-generator' },
   { title: 'Ragini Diagnostics', description: 'Healthcare diagnostics experience with packages, booking flow, and SEO-ready responsive pages.', tech: ['Next.js', 'TypeScript', 'Tailwind CSS'], href: 'https://github.com/Rajmani-Nadar/ragini-diagnostics' },
   { title: 'Hariharan Waterproofing', description: 'Service business website with project gallery, FAQs, testimonials, and conversion-focused CTAs.', tech: ['Next.js', 'TypeScript', 'Tailwind CSS'], href: 'https://github.com/Rajmani-Nadar/hariharan-waterproofing' },
   { title: 'Grocery Platform', description: 'Responsive grocery shopping platform with product details, filtering, cart, and reusable UI.', tech: ['Next.js', 'React', 'TypeScript'], href: 'https://github.com/Rajmani-Nadar/grocery' },

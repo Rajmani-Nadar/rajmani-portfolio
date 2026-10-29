@@ -73,7 +73,7 @@ Email: ${data.get('email')}`);
           <p>LinkedIn: <a className="text-accent hover:text-accent2" href="https://linkedin.com/in/rajmani-v-5a550b233" target="_blank" rel="noreferrer">linkedin.com/in/rajmani-v-5a550b233</a></p>
         </div>
         <div className="rounded-2xl border border-border/15 bg-foreground/5 p-4 text-sm text-muted">
-          Prefer async communication. Share context, timeline, and decision-makers—I'll reply with a plan and estimate.
+          Prefer async communication. Share context, timeline, and decision-makers—I&apos;ll reply with a plan and estimate.
         </div>
       </div>
     </div>

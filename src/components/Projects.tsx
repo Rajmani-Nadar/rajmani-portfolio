@@ -9,6 +9,16 @@ import { useEffect, useState } from 'react';
 
 const featuredProjects = [
   {
+    title: 'QRForge',
+    summary: 'Free QR Code Generator',
+    description: 'A privacy-focused QR code generator built with Next.js and TypeScript, supporting multiple QR formats, customizable colors and frames, high-resolution PNG/SVG downloads, and browser-based QR generation without accounts, databases, or external QR APIs.',
+    tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS'],
+    highlights: ['Multiple QR formats', 'Custom colors and frames', 'PNG and SVG downloads', 'Browser-side generation', 'No signup required', 'Responsive design'],
+    gallery: ['/images/qrforge.svg'],
+    href: 'https://qr-code-generator-pi-sand.vercel.app/',
+    github: 'https://github.com/Rajmani-Nadar/qr-code-generator'
+  },
+  {
     title: 'Ragini Diagnostics',
     summary: 'Healthcare Website',
     description: 'A modern healthcare diagnostics website with responsive UI, health packages, booking interface, SEO optimization, and mobile-first design.',
@@ -167,22 +177,24 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
           </div>
         </button>
 
-        <div className="grid grid-cols-4 gap-2 sm:gap-3">
-          {images.map((image, index) => (
-            <motion.button
-              key={image}
-              type="button"
-              aria-label={`Show ${title} screenshot ${index + 1}`}
-              aria-current={index === activeIndex}
-              onClick={() => setActiveIndex(index)}
-              whileHover={{ y: -4 }}
-              transition={{ duration: 0.2 }}
-              className={`relative aspect-[16/9] overflow-hidden rounded-xl border bg-zinc-950 ${index === activeIndex ? 'border-[#D4AF37]' : 'border-white/10'}`}
-            >
-              <Image src={image} alt="" fill className="object-cover object-center" sizes="(max-width:640px) 25vw, 12vw" />
-            </motion.button>
-          ))}
-        </div>
+        {images.length > 1 && (
+          <div className="grid grid-cols-4 gap-2 sm:gap-3">
+            {images.map((image, index) => (
+              <motion.button
+                key={image}
+                type="button"
+                aria-label={`Show ${title} screenshot ${index + 1}`}
+                aria-current={index === activeIndex}
+                onClick={() => setActiveIndex(index)}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className={`relative aspect-[16/9] overflow-hidden rounded-xl border bg-zinc-950 ${index === activeIndex ? 'border-[#D4AF37]' : 'border-white/10'}`}
+              >
+                <Image src={image} alt="" fill className="object-cover object-center" sizes="(max-width:640px) 25vw, 12vw" />
+              </motion.button>
+            ))}
+          </div>
+        )}
       </div>
 
       <AnimatePresence>
@@ -213,13 +225,17 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
               <button type="button" aria-label="Close fullscreen preview" onClick={() => setIsLightboxOpen(false)} className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
                 <X className="h-5 w-5" />
               </button>
-              <button type="button" aria-label="Previous screenshot" onClick={showPrevious} className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
-                <ArrowLeft className="h-5 w-5" />
-              </button>
-              <button type="button" aria-label="Next screenshot" onClick={showNext} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
-                <ArrowRight className="h-5 w-5" />
-              </button>
-              <p className="mt-3 text-center text-xs text-white/60">{activeIndex + 1} / {images.length}</p>
+              {images.length > 1 && (
+                <>
+                  <button type="button" aria-label="Previous screenshot" onClick={showPrevious} className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
+                    <ArrowLeft className="h-5 w-5" />
+                  </button>
+                  <button type="button" aria-label="Next screenshot" onClick={showNext} className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
+                    <ArrowRight className="h-5 w-5" />
+                  </button>
+                  <p className="mt-3 text-center text-xs text-white/60">{activeIndex + 1} / {images.length}</p>
+                </>
+              )}
             </motion.div>
           </motion.div>
         )}
