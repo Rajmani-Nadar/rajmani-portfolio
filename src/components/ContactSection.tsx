@@ -9,7 +9,7 @@ const contactLinks = [
   { label: 'Email', detail: 'rajmaninadar2000@gmail.com', href: 'mailto:rajmaninadar2000@gmail.com', icon: Mail },
   { label: 'GitHub', detail: 'github.com/Rajmani-Nadar', href: 'https://github.com/Rajmani-Nadar?tab=repositories', icon: GitBranch },
   { label: 'LinkedIn', detail: 'linkedin.com/in/rajmani-v-5a550b233', href: 'https://linkedin.com/in/rajmani-v-5a550b233', icon: MessageCircle },
-  { label: 'WhatsApp', href: 'https://wa.me/919876543210', icon: MessageCircle }
+  { label: 'WhatsApp', detail: '91 84382 51281', href: 'https://wa.me/918438251281', icon: MessageCircle }
 ];
 
 export function ContactSection({ standalone = false }: { standalone?: boolean }) {
