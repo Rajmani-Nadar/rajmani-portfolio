@@ -7,7 +7,6 @@ import Script from 'next/script';
 
 const stats = [
   { value: '1.5+', label: 'Years Experience' },
-  { value: '16+', label: 'Projects Delivered' },
   { value: 'Next.js', label: 'Next.js Specialist' },
   { value: '100%', label: 'Responsive Design' },
   { value: '5', label: 'Live Websites' },
@@ -19,33 +18,35 @@ const currentTechnologies = ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', '
 const focusAreas = ['Responsive UI Development', 'CMS Website Builder', 'Business Websites', 'Performance & SEO Optimization'];
 
 const recentWork = [
-  { title: 'QRForge', image: '/images/qrforge.svg', target: '#featured-qrforge' },
-  { title: 'Ragini Diagnostics', image: '/images/ragini-home.png', target: '#featured-ragini-diagnostics' },
-  { title: 'Hariharan Waterproofing', image: '/images/hariharan-home.png', target: '#featured-hariharan-waterproofing' },
-  { title: 'Grocery E-Commerce', image: '/images/grocery-home.png', target: '#featured-grocery-e-commerce' },
-  { title: 'Premium Car Wash Website', image: '/images/car-wash.png', target: '#featured-premium-car-wash' }
+  { title: 'QRForge', image: '/images/qrforge.svg', target: '/projects#featured-qrforge' },
+  { title: 'Ragini Diagnostics', image: '/images/ragini-home.png', target: '/projects#featured-ragini-diagnostics' },
+  { title: 'Hariharan Waterproofing', image: '/images/hariharan-home.png', target: '/projects#featured-hariharan-waterproofing' },
+  { title: 'Grocery E-Commerce', image: '/images/grocery-home.png', target: '/projects#featured-grocery-e-commerce' },
+  { title: 'Premium Car Wash Website', image: '/images/car-wash.png', target: '/projects#featured-premium-car-wash-website' }
 ];
 
 const storyCards = [
   {
-    title: 'Frontend obsession',
-    description: 'I enjoy turning ideas into high-converting interfaces with careful UX thinking, refined motion, and production-ready code.'
+    title: 'Frontend craft',
+    description: 'I turn designs and requirements into responsive interfaces with clear structure, consistent styling, and maintainable code.'
   },
   {
-    title: 'CMS + client work',
-    description: 'I have practical experience building CMS-backed websites and collaborating with clients to shape business-ready experiences.'
+    title: 'CMS & client delivery',
+    description: 'I build CMS-backed websites and help clients manage content, resolve issues, and use their platforms confidently.'
   },
   {
-    title: 'Performance matters',
-    description: 'Every interface I build balances visual polish, accessibility, and speed so users get a premium product without friction.'
+    title: 'Business-ready UI',
+    description: 'I focus on practical user flows, reusable components, and responsive layouts that support real business needs.'
   },
   {
     title: 'ERPNext & Frappe',
-    description: 'Building CMS-backed business platforms, customizing ERPNext interfaces, developing reusable dashboard components, and supporting business workflows through the Frappe Framework.'
+    description: 'I customize ERPNext interfaces and use the Frappe Framework to build and support frontend experiences for business platforms.'
   }
 ];
 
-export function About() {
+export function About({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? 'h1' : 'h2';
+
   return (
     <>
       <Script id="about-breadcrumb-schema" type="application/ld+json">
@@ -62,13 +63,13 @@ export function About() {
       <div className="mb-8 flex items-end justify-between gap-4">
         <div>
           <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">About</p>
-          <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
-            Building elegant digital experiences that feel premium and work hard.
-          </h2>
+          <Heading className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
+            Frontend developer focused on clear, practical digital experiences.
+          </Heading>
         </div>
         <div className="hidden rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/5 px-3 py-1.5 text-xs text-[#f9d977] md:flex md:items-center md:gap-2">
           <Sparkles className="h-3.5 w-3.5" />
-          Crafted for modern brands
+          React • Next.js • TypeScript
         </div>
       </div>
 
@@ -80,17 +81,14 @@ export function About() {
           transition={{ duration: 0.5 }}
           className="rounded-[1.75rem] border border-border/15 bg-surface/90 p-6 shadow-card sm:p-8"
         >
-          <p className="mb-4 text-lg leading-8 text-foreground/75">
-            I&apos;m a Frontend Web Platform Developer specializing in React, Next.js, TypeScript, and Tailwind CSS, building modern, responsive, and business-focused web experiences.
+          <p className="mb-4 max-w-3xl text-lg leading-8 text-foreground/75">
+            I&apos;m <strong className="font-semibold text-foreground">V. Rajmani Nadar</strong>, a frontend web platform developer who builds modern, responsive websites and web applications with React, Next.js, and TypeScript.
           </p>
-          <p className="mb-4 text-base leading-7 text-foreground/65">
-            Alongside frontend development, I work with <strong className="font-semibold text-foreground/80">ERPNext</strong> and the <strong className="font-semibold text-foreground/80">Frappe Framework</strong> to customize CMS-backed business platforms, develop reusable frontend components, and build dashboard experiences that support real business workflows.
-          </p>
-          <p className="mb-6 text-base leading-7 text-foreground/65">
-            My experience combines frontend engineering, CMS website development, ERPNext/Frappe customization, client support, dashboard training, and production-ready website deployment.
+          <p className="mb-6 max-w-3xl text-base leading-7 text-foreground/65">
+            My work spans component-based interfaces, CMS websites, Tailwind CSS styling, and ERPNext or Frappe platforms. I bring an understanding of both frontend implementation and day-to-day client needs, from responsive layouts and reusable components to content management and post-launch support.
           </p>
 
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {storyCards.map((card, index) => (
               <div
                 key={card.title}

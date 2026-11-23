@@ -4,12 +4,12 @@ import { SeoLandingPage } from '@/components/SeoLandingPage';
 const url = 'https://rajmani-dev.vercel.app/react-developer';
 
 export const metadata: Metadata = {
-  title: 'React Developer | V. Rajmani Nadar',
+  title: 'React Developer | V. Rajmani Nadar | Rajmani Dev',
   description: 'React developer specializing in responsive business websites, reusable UI components, dashboard interfaces, and frontend application development.',
   keywords: ['React Developer', 'React Web Application Development', 'Reusable React Components', 'React Dashboard Developer', 'Responsive React UI', 'React Frontend Developer India'],
   alternates: { canonical: url },
-  openGraph: { title: 'React Developer | V. Rajmani Nadar', description: 'React developer specializing in responsive business websites, reusable UI components, dashboard interfaces, and frontend application development.', url, siteName: 'V. Rajmani Portfolio', type: 'website', images: ['/images/og-image.png'] },
-  twitter: { card: 'summary_large_image', title: 'React Developer | V. Rajmani Nadar', description: 'React developer specializing in responsive business websites, reusable UI components, dashboard interfaces, and frontend application development.', images: ['/images/og-image.png'] },
+  openGraph: { title: 'React Developer | V. Rajmani Nadar | Rajmani Dev', description: 'React developer specializing in responsive business websites, reusable UI components, dashboard interfaces, and frontend application development.', url, siteName: 'Rajmani Dev', type: 'website', images: ['/images/og-image.jpg'] },
+  twitter: { card: 'summary_large_image', title: 'React Developer | V. Rajmani Nadar | Rajmani Dev', description: 'React developer specializing in responsive business websites, reusable UI components, dashboard interfaces, and frontend application development.', images: ['/images/og-image.jpg'] },
   robots: { index: true, follow: true }
 };
 

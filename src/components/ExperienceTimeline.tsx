@@ -8,18 +8,13 @@ const timeline = [
     role: 'Web Platform Developer',
     period: 'Current',
     company: 'JPencil Technologies',
-    description: 'Frontend Web Platform Developer working on CMS websites, Website Builder support, client communication, support ticket management, and dashboard training.',
+    description: 'Develops CMS-backed websites and supports clients with implementation, troubleshooting, dashboard training, and post-launch guidance.',
     responsibilities: [
-      'Develop and customize responsive websites using HTML5 and CSS3.',
-      'Build reusable CMS-safe HTML and CSS sections compatible with the Website Builder.',
-      'Create landing pages, banners, and reusable website components inside the CMS.',
-      'Solve client website issues, frontend layout fixes, and CMS-related queries.',
-      'Open, manage, update, and close client support tickets after successful resolution.',
-      'Keep clients updated about the status of their reported queries until completion.',
-      'Send professional follow-up emails regarding issue updates, completed fixes, pending tasks, and training sessions.',
-      'Connect with clients through AnyDesk and UltraViewer to provide Website Builder and Dashboard training.',
-      'Explain dashboard features, CMS management, and Website Builder functionality in a simple, easy-to-understand way.',
-      'Assist clients with website content updates, CMS usage, deployment support, and post-launch guidance.'
+      'Build reusable, CMS-compatible landing pages and website sections with HTML5 and CSS3.',
+      'Resolve frontend layout, content, and CMS issues for client websites.',
+      'Manage support queries and keep clients informed from investigation through resolution.',
+      'Provide Website Builder and dashboard training through remote support sessions.',
+      'Assist with content updates, deployment support, and post-launch usage guidance.'
     ],
     technologies: 'HTML5 • CSS3 • CMS Website Builder • Git • GitHub • AnyDesk • UltraViewer'
   },
@@ -27,27 +22,22 @@ const timeline = [
     role: 'Frontend Developer',
     period: 'January 2025 - February 2026',
     company: 'Sanvro Technologies',
-    description: 'Worked as a Frontend Developer building modern business platforms, CMS-driven websites, and dashboard interfaces using ERPNext, Frappe Framework, and Strapi Headless CMS. Focused on creating responsive user interfaces, reusable components, and seamless content management experiences for business applications.',
+    description: 'Built responsive business interfaces and CMS-driven web experiences with ERPNext, Frappe Framework, Strapi, React, Next.js, and TypeScript.',
     responsibilities: [
-      'Developed responsive frontend interfaces using React, Next.js, TypeScript, Tailwind CSS, HTML5, and CSS3.',
-      'Customized ERPNext web interfaces, portal pages, and dashboard layouts for business applications.',
-      'Worked with the Frappe Framework to build and enhance CMS-backed business workflows and frontend experiences.',
-      'Integrated and managed content using Strapi Headless CMS for dynamic websites and business platforms.',
-      'Built reusable UI components and maintained consistent design systems across multiple projects.',
-      'Improved dashboard usability, responsiveness, and overall user experience across ERPNext modules.',
-      'Integrated frontend applications with CMS and backend APIs for dynamic content rendering.',
-      'Collaborated with the development team to implement new features, fix UI issues, and optimize application performance.'
+      'Developed responsive interfaces using React, Next.js, TypeScript, Tailwind CSS, HTML5, and CSS3.',
+      'Customized ERPNext portal pages and dashboard layouts for business applications.',
+      'Built reusable UI components and maintained consistent patterns across frontend work.',
+      'Used Strapi and backend APIs to render and manage dynamic website content.',
+      'Improved dashboard usability and fixed UI issues across ERPNext modules.',
+      'Collaborated with the development team on implementation and application maintenance.'
     ],
     technologies: 'ERPNext • Frappe Framework • Strapi Headless CMS • React • Next.js • TypeScript • Tailwind CSS • HTML5 • CSS3 • Git • GitHub'
   },
 ];
 
-const platformHighlight = {
-  title: 'Business Platform Development',
-  description: 'Working with ERPNext and the Frappe Framework to build CMS-backed business platforms, customize dashboards, manage business workflows, solve client support requests, and deliver frontend experiences that integrate with real business operations.'
-};
+export function ExperienceTimeline({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? 'h1' : 'h2';
 
-export function ExperienceTimeline() {
   return (
     <>
       <Script id="experience-breadcrumb-schema" type="application/ld+json">
@@ -60,27 +50,15 @@ export function ExperienceTimeline() {
           ]
         })}
       </Script>
-      <section id="experience" className="scroll-mt-28 py-8 sm:py-12">
-      <div className="mb-8">
-        <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Experience</p>
-        <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
-          A steady path shaped by product work, client delivery, and frontend craft.
-        </h2>
-      </div>
+      <section id="experience" className="scroll-mt-32 py-10 sm:py-14">
+        <div className="mb-8 max-w-4xl sm:mb-10">
+          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Experience</p>
+          <Heading className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
+            Building and supporting frontend experiences for websites and business platforms.
+          </Heading>
+        </div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.45 }}
-        className="mb-6 rounded-[1.5rem] border border-[#D4AF37]/20 bg-surface/90 p-5 shadow-card"
-      >
-        <h3 className="text-xl font-semibold text-foreground">{platformHighlight.title}</h3>
-        <p className="mt-2 text-base leading-7 text-foreground/70">{platformHighlight.description}</p>
-      </motion.div>
-
-      <div className="relative before:absolute before:left-5 before:top-0 before:h-full before:w-px before:bg-[#D4AF37]/20 sm:before:left-1/2">
-        <div className="space-y-6">
+        <div className="relative space-y-6 pl-8 before:absolute before:inset-y-0 before:left-2 before:w-px before:bg-[#D4AF37]/20 xl:space-y-8 xl:pl-0 xl:before:left-1/2">
           {timeline.map((item, index) => (
             <motion.div
               key={item.role}
@@ -88,36 +66,46 @@ export function ExperienceTimeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.45, delay: index * 0.08 }}
-              className="relative pl-12 sm:pl-0"
+              className="relative min-w-0 xl:grid xl:grid-cols-[minmax(0,1fr)_3.5rem_minmax(0,1fr)] xl:items-start"
             >
-              <div className="absolute left-0 top-5 h-4 w-4 rounded-full border-4 border-[#0b0b0b] bg-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.5)] sm:left-1/2 sm:-translate-x-1/2" />
+              <div className="absolute -left-8 top-6 z-10 h-4 w-4 rounded-full border-4 border-background bg-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.35)] xl:static xl:col-start-2 xl:row-start-1 xl:mt-6 xl:justify-self-center" />
               <div
-                className={`rounded-[1.5rem] border border-border/15 bg-surface/90 p-5 shadow-card sm:w-[calc(50%-2.25rem)] ${index % 2 === 0 ? 'sm:mr-auto' : 'sm:ml-auto'}`}
+                className={`min-w-0 rounded-[1.5rem] border border-border/15 bg-surface/90 p-5 shadow-card sm:p-6 xl:row-start-1 ${index % 2 === 0 ? 'xl:col-start-1' : 'xl:col-start-3'}`}
               >
-                <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-                  <h3 className="text-xl font-semibold text-foreground">{item.role}</h3>
-                  <span className="rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#f9d977]">
+                <div className="mb-4 flex flex-wrap items-start justify-between gap-2.5">
+                  <h3 className="min-w-0 text-xl font-semibold leading-tight text-foreground sm:text-2xl">{item.role}</h3>
+                  <span className="shrink-0 rounded-full border border-[#D4AF37]/20 bg-[#D4AF37]/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.16em] text-[#f9d977]">
                     {item.period}
                   </span>
                 </div>
-                <p className="mb-3 text-sm font-medium text-foreground/60">{item.company}</p>
-                <p className="text-base leading-7 text-foreground/70">{item.description}</p>
+                <p className="mb-3 text-sm font-semibold text-foreground/75">{item.company}</p>
+                <p className="text-[15px] leading-7 text-foreground/70">{item.description}</p>
                 {item.responsibilities && (
-                  <ul className="mt-4 space-y-2 text-sm leading-6 text-foreground/65">
+                  <ul className="mt-5 space-y-2.5 text-sm leading-6 text-foreground/65">
                     {item.responsibilities.map((responsibility) => (
-                      <li key={responsibility} className="flex gap-2">
+                      <li key={responsibility} className="flex gap-2.5">
                         <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4AF37]" />
-                        <span>{responsibility}</span>
+                        <span className="min-w-0">{responsibility}</span>
                       </li>
                     ))}
                   </ul>
                 )}
-                {item.technologies && <p className="mt-4 border-t border-white/10 pt-4 text-sm leading-6 text-[#f9d977]">Technologies: {item.technologies}</p>}
+                {item.technologies && (
+                  <div className="mt-5 border-t border-border/15 pt-4">
+                    <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground/45">Technologies</p>
+                    <div className="flex flex-wrap gap-2">
+                      {item.technologies.split(' • ').map((technology) => (
+                        <span key={technology} className="max-w-full break-words rounded-full border border-border/15 bg-foreground/5 px-2.5 py-1 text-xs leading-5 text-foreground/70">
+                          {technology}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
-      </div>
       </section>
     </>
   );

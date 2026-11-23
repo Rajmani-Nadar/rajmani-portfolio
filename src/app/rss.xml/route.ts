@@ -20,7 +20,7 @@ export function GET() {
   const feed = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0">
       <channel>
-        <title>V. Rajmani Developer Blog</title>
+        <title>Rajmani Dev Developer Blog</title>
         <link>${siteUrl}/blog</link>
         <description>Articles about frontend development, React, Next.js, ERPNext, Frappe, Strapi, and CMS platforms.</description>
         <language>en-IN</language>

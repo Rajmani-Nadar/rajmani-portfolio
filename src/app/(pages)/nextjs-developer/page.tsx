@@ -4,12 +4,12 @@ import { SeoLandingPage } from '@/components/SeoLandingPage';
 const url = 'https://rajmani-dev.vercel.app/nextjs-developer';
 
 export const metadata: Metadata = {
-  title: 'Next.js Developer | V. Rajmani Nadar',
+  title: 'Next.js Developer | V. Rajmani Nadar | Rajmani Dev',
   description: 'Next.js developer building SEO-friendly websites, CMS-powered business platforms, landing pages, dashboards, and scalable frontend experiences.',
   keywords: ['Next.js Developer', 'Next.js SEO Websites', 'Next.js CMS Developer', 'Next.js Landing Pages', 'Next.js Dashboard Developer', 'Next.js Developer India'],
   alternates: { canonical: url },
-  openGraph: { title: 'Next.js Developer | V. Rajmani Nadar', description: 'Next.js developer building SEO-friendly websites, CMS-powered business platforms, landing pages, dashboards, and scalable frontend experiences.', url, siteName: 'V. Rajmani Portfolio', type: 'website', images: ['/images/og-image.png'] },
-  twitter: { card: 'summary_large_image', title: 'Next.js Developer | V. Rajmani Nadar', description: 'Next.js developer building SEO-friendly websites, CMS-powered business platforms, landing pages, dashboards, and scalable frontend experiences.', images: ['/images/og-image.png'] },
+  openGraph: { title: 'Next.js Developer | V. Rajmani Nadar | Rajmani Dev', description: 'Next.js developer building SEO-friendly websites, CMS-powered business platforms, landing pages, dashboards, and scalable frontend experiences.', url, siteName: 'Rajmani Dev', type: 'website', images: ['/images/og-image.jpg'] },
+  twitter: { card: 'summary_large_image', title: 'Next.js Developer | V. Rajmani Nadar | Rajmani Dev', description: 'Next.js developer building SEO-friendly websites, CMS-powered business platforms, landing pages, dashboards, and scalable frontend experiences.', images: ['/images/og-image.jpg'] },
   robots: { index: true, follow: true }
 };
 

@@ -4,12 +4,12 @@ import { SeoLandingPage } from '@/components/SeoLandingPage';
 const url = 'https://rajmani-dev.vercel.app/cms-development';
 
 export const metadata: Metadata = {
-  title: 'CMS Website Developer | V. Rajmani Nadar',
-  description: 'CMS website developer creating CMS-safe reusable HTML/CSS components, responsive landing pages, Website Builder sections, reusable UI blocks, and business websites.',
+  title: 'CMS Website Developer | V. Rajmani Nadar | Rajmani Dev',
+  description: 'CMS website development with reusable HTML/CSS, responsive landing pages, Website Builder sections, and business-ready UI.',
   keywords: ['CMS Website Developer', 'CMS-safe HTML CSS', 'Website Builder Developer', 'CMS Landing Pages', 'Business CMS Websites', 'Responsive CMS UI'],
   alternates: { canonical: url },
-  openGraph: { title: 'CMS Website Developer | V. Rajmani Nadar', description: 'CMS website developer creating CMS-safe reusable HTML/CSS components, responsive landing pages, Website Builder sections, reusable UI blocks, and business websites.', url, siteName: 'V. Rajmani Portfolio', type: 'website', images: ['/images/og-image.png'] },
-  twitter: { card: 'summary_large_image', title: 'CMS Website Developer | V. Rajmani Nadar', description: 'CMS website developer creating CMS-safe reusable HTML/CSS components, responsive landing pages, Website Builder sections, reusable UI blocks, and business websites.', images: ['/images/og-image.png'] },
+  openGraph: { title: 'CMS Website Developer | V. Rajmani Nadar | Rajmani Dev', description: 'CMS website development with reusable HTML/CSS, responsive landing pages, Website Builder sections, and business-ready UI.', url, siteName: 'Rajmani Dev', type: 'website', images: ['/images/og-image.jpg'] },
+  twitter: { card: 'summary_large_image', title: 'CMS Website Developer | V. Rajmani Nadar | Rajmani Dev', description: 'CMS website development with reusable HTML/CSS, responsive landing pages, Website Builder sections, and business-ready UI.', images: ['/images/og-image.jpg'] },
   robots: { index: true, follow: true }
 };
 

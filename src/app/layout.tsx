@@ -6,15 +6,16 @@ import { NavBar } from '@/components/NavBar';
 import { PageTransition } from '@/components/PageTransition';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { MotionPreferences } from '@/components/MotionPreferences';
 import Script from 'next/script';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], variable: '--font-grotesk' });
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
 export const metadata: Metadata = {
-  title: 'V. Rajmani Nadar | Frontend Developer • ERPNext & Frappe Developer',
+  title: 'V. Rajmani Nadar | Frontend Developer | Rajmani Dev',
   description:
-    'Frontend Web Platform Developer specializing in React, Next.js, TypeScript, Tailwind CSS, ERPNext, Frappe Framework, CMS website development, dashboard customization, reusable frontend components, and business workflow interfaces.',
+    'Portfolio of V. Rajmani Nadar, a frontend developer building responsive web interfaces with React, Next.js, TypeScript, ERPNext, and Frappe.',
   metadataBase: new URL('https://rajmani-dev.vercel.app'),
   alternates: {
     canonical: 'https://rajmani-dev.vercel.app'
@@ -43,19 +44,19 @@ export const metadata: Metadata = {
     'Business Workflow UI'
   ],
   openGraph: {
-    title: 'V. Rajmani Nadar — Frontend Web Platform Developer',
-    description: 'Building premium React, Next.js, ERPNext, Frappe, and CMS-powered web experiences.',
+    title: 'V. Rajmani Nadar | Frontend Developer | Rajmani Dev',
+    description: 'Responsive web interfaces with React, Next.js, TypeScript, ERPNext, and Frappe.',
     url: 'https://rajmani-dev.vercel.app',
-    siteName: 'V. Rajmani Portfolio',
+    siteName: 'Rajmani Dev',
     locale: 'en_US',
     type: 'website',
-    images: ['/images/og-image.png']
+    images: ['/images/og-image.jpg']
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'V. Rajmani Nadar — Frontend Web Platform Developer',
-    description: 'Building premium React, Next.js, ERPNext, Frappe, and CMS-powered web experiences.',
-    images: ['/images/og-image.png']
+    title: 'V. Rajmani Nadar | Frontend Developer | Rajmani Dev',
+    description: 'Responsive web interfaces with React, Next.js, TypeScript, ERPNext, and Frappe.',
+    images: ['/images/og-image.jpg']
   },
   robots: {
     index: true,
@@ -83,6 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
       <body className="min-h-screen bg-background text-foreground antialiased transition-colors duration-300">
         <ThemeProvider>
+          <MotionPreferences>
           <Script id="person-schema" type="application/ld+json">
             {JSON.stringify({
               '@context': 'https://schema.org',
@@ -93,9 +95,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               description:
                 'Frontend developer specializing in React, Next.js, TypeScript, ERPNext, Frappe Framework, CMS website development, reusable frontend components, dashboard customization, and business workflow interfaces.',
               url: 'https://rajmani-dev.vercel.app',
-              image: 'https://rajmani-dev.vercel.app/images/og-image.png',
+              image: 'https://rajmani-dev.vercel.app/images/og-image.jpg',
               email: 'rajmaninadar2000@gmail.com',
-              sameAs: ['https://github.com/Rajmani-Nadar', 'https://www.linkedin.com/in/rajmani-nadar'],
+              sameAs: ['https://github.com/Rajmani-Nadar', 'https://linkedin.com/in/rajmani-v-5a550b233'],
               knowsAbout: [
                 'React',
                 'Next.js',
@@ -128,7 +130,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              name: 'V. Rajmani Portfolio',
+              name: 'Rajmani Dev',
               url: 'https://rajmani-dev.vercel.app',
               description:
                 'Portfolio of V. Rajmani Nadar, Frontend Web Platform Developer specializing in React, Next.js, ERPNext, Frappe Framework, and CMS platforms.',
@@ -139,7 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'V. Rajmani Portfolio',
+              name: 'Rajmani Dev',
               url: 'https://rajmani-dev.vercel.app',
               logo: 'https://rajmani-dev.vercel.app/images/favicon.png'
             })}
@@ -155,6 +157,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <Footer />
   </div>
 </div>
+          </MotionPreferences>
         </ThemeProvider>
       </body>
     </html>

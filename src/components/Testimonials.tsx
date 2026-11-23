@@ -1,6 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Quote } from 'lucide-react';
 
 const testimonials = [
@@ -12,32 +12,43 @@ const testimonials = [
 ];
 
 export function Testimonials() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
-    <section id="testimonials" className="scroll-mt-28 py-8 sm:py-12">
-      <div className="mb-8">
+    <section id="testimonials" className="scroll-mt-28 py-10 sm:py-14">
+      <div className="mb-8 max-w-4xl sm:mb-10">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Testimonials</p>
         <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
-          Clients value clear communication, polished execution, and reliable delivery.
+          A client perspective on the finished website.
         </h2>
       </div>
 
-      <div className="grid gap-5 lg:grid-cols-2">
+      <div className="max-w-6xl">
         {testimonials.map((item, index) => (
-          <motion.div
+          <motion.figure
             key={item.client}
-            initial={{ opacity: 0, y: 18 }}
+            initial={prefersReducedMotion ? false : { opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.45, delay: index * 0.08 }}
-            className="rounded-[1.7rem] border border-border/15 bg-surface/90 p-6 shadow-card"
+            transition={{ duration: prefersReducedMotion ? 0 : 0.4, delay: prefersReducedMotion ? 0 : index * 0.08 }}
+            className="group grid overflow-hidden rounded-[1.75rem] border border-border/15 bg-surface/90 shadow-card transition-colors hover:border-[#D4AF37]/30 lg:grid-cols-[minmax(0,1fr)_minmax(15rem,0.34fr)]"
           >
-            <Quote className="mb-4 h-8 w-8 text-[#D4AF37]" />
-            <p className="text-lg leading-8 text-foreground/75">“{item.quote}”</p>
-            <div className="mt-6 border-t border-border/15 pt-4">
-              <p className="text-base font-semibold text-foreground">{item.client}</p>
-              <p className="text-sm text-foreground/60">{item.role}</p>
+            <div className="p-6 sm:p-8 lg:p-10">
+              <div className="mb-5 flex items-center gap-3">
+                <Quote aria-hidden="true" className="h-6 w-6 text-[#D4AF37]/75" />
+                <span className="h-px w-8 bg-[#D4AF37]/40" />
+              </div>
+              <blockquote className="max-w-4xl text-lg leading-8 text-foreground/80 sm:text-xl sm:leading-9">
+                “{item.quote}”
+              </blockquote>
             </div>
-          </motion.div>
+            <figcaption className="flex items-center border-t border-border/15 bg-foreground/[0.025] p-6 sm:p-8 lg:border-l lg:border-t-0">
+              <div className="border-l-2 border-[#D4AF37]/70 pl-4">
+                <p className="text-lg font-semibold leading-snug text-foreground">{item.client}</p>
+                <p className="mt-1.5 text-sm text-foreground/60">{item.role}</p>
+              </div>
+            </figcaption>
+          </motion.figure>
         ))}
       </div>
     </section>

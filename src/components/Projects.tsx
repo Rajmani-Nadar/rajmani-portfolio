@@ -1,11 +1,11 @@
 'use client';
 
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, ArrowUpRight, GitBranch, Hand, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Expand, GitBranch, X } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Script from 'next/script';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const featuredProjects = [
   {
@@ -65,15 +65,20 @@ const featuredProjects = [
   }
 ];
 
-const moreProjects = [
+const moreProjects: {
+  title: string;
+  description: string;
+  image: string;
+  href: string;
+  github?: string;
+  category: string;
+}[] = [
   {
     title: 'Premium Car Wash Website',
     description: 'Responsive business landing page with premium UI, services section, testimonials, and booking CTA.',
     image: '/images/car-wash.png',
     href: 'https://premium-carwash.vercel.app/',
-    github: 'https://github.com/Rajmani-Nadar/premium-carwash',
-    category: 'Service brand',
-    accent: 'from-[#D4AF37]/15 to-transparent'
+    category: 'Service brand'
   },
   {
     title: 'Personal Portfolio',
@@ -81,30 +86,52 @@ const moreProjects = [
     image: '/images/portfolio.png',
     href: 'https://rajmani-dev.vercel.app',
     github: 'https://github.com/Rajmani-Nadar/rajmani-portfolio',
-    category: 'Personal brand',
-    accent: 'from-[#D4AF37]/10 to-transparent'
+    category: 'Personal brand'
   }
 ];
 
 function FeaturedProjectGallery({ title, images }: { title: string; images: string[] }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
-  const [hasOpenedLightbox, setHasOpenedLightbox] = useState(false);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
 
   const activeImage = images[activeIndex];
 
   useEffect(() => {
     if (!isLightboxOpen) return;
 
+    const trigger = triggerRef.current;
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setIsLightboxOpen(false);
       if (event.key === 'ArrowRight') setActiveIndex((current) => (current + 1) % images.length);
       if (event.key === 'ArrowLeft') setActiveIndex((current) => (current - 1 + images.length) % images.length);
+
+      if (event.key === 'Tab') {
+        const focusableButtons = Array.from(
+          dialogRef.current?.querySelectorAll<HTMLButtonElement>('button:not([disabled])') ?? []
+        );
+        const firstButton = focusableButtons[0];
+        const lastButton = focusableButtons[focusableButtons.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstButton) {
+          event.preventDefault();
+          lastButton?.focus();
+        } else if (!event.shiftKey && document.activeElement === lastButton) {
+          event.preventDefault();
+          firstButton?.focus();
+        }
+      }
     };
 
+    closeButtonRef.current?.focus();
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      trigger?.focus();
+    };
   }, [images.length, isLightboxOpen]);
 
   useEffect(() => {
@@ -114,10 +141,7 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
     };
   }, [isLightboxOpen]);
 
-  const openLightbox = () => {
-    setHasOpenedLightbox(true);
-    setIsLightboxOpen(true);
-  };
+  const openLightbox = () => setIsLightboxOpen(true);
 
   const showPrevious = () => setActiveIndex((current) => (current - 1 + images.length) % images.length);
   const showNext = () => setActiveIndex((current) => (current + 1) % images.length);
@@ -138,14 +162,15 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
 
   return (
     <>
-      <div className="space-y-3">
+      <div className="flex flex-col gap-3 p-4 sm:p-5 lg:p-6">
         <button
+          ref={triggerRef}
           type="button"
           aria-label={`Open ${title} screenshot fullscreen`}
           onClick={openLightbox}
-          className="group relative block w-full cursor-zoom-in text-left"
+          className="group relative block w-full cursor-zoom-in rounded-2xl text-left outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
         >
-          <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-yellow-500/20 bg-zinc-950">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border/15 bg-[#111]">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={activeImage}
@@ -155,25 +180,13 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
                 transition={{ duration: 0.3 }}
                 className="absolute inset-0"
               >
-                <Image src={activeImage} alt={title} fill className="object-cover object-center transition-transform duration-500 group-hover:scale-105" sizes="(max-width:768px) 100vw, 50vw" />
+                <Image src={activeImage} alt={`${title} project screenshot`} fill className="object-contain object-center transition-transform duration-500 group-hover:scale-[1.02]" sizes="(max-width:768px) 100vw, 50vw" />
               </motion.div>
             </AnimatePresence>
-            <AnimatePresence>
-              {!hasOpenedLightbox && (
-                <motion.span
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ opacity: { duration: 0.25 }, y: { duration: 0.25 } }}
-                  className="pointer-events-none absolute bottom-4 right-4 hidden items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-[#111111]/85 px-3 py-2 text-xs font-semibold text-[#f9d977] shadow-[0_0_18px_rgba(212,175,55,0.18)] backdrop-blur-sm md:inline-flex md:opacity-0 md:transition-opacity md:group-hover:opacity-100"
-                >
-                  <motion.span animate={{ y: [0, -3, 0] }} transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 1.2 }}>
-                    <Hand className="h-4 w-4" />
-                  </motion.span>
-                  Click to Preview
-                </motion.span>
-              )}
-            </AnimatePresence>
+            <span className="pointer-events-none absolute bottom-3 right-3 hidden items-center gap-2 rounded-full border border-white/15 bg-black/75 px-3 py-2 text-xs font-medium text-white opacity-0 backdrop-blur-sm transition-opacity group-hover:opacity-100 md:inline-flex">
+              <Expand className="h-3.5 w-3.5" />
+              Preview
+            </span>
           </div>
         </button>
 
@@ -186,9 +199,9 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
                 aria-label={`Show ${title} screenshot ${index + 1}`}
                 aria-current={index === activeIndex}
                 onClick={() => setActiveIndex(index)}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.2 }}
-                className={`relative aspect-[16/9] overflow-hidden rounded-xl border bg-zinc-950 ${index === activeIndex ? 'border-[#D4AF37]' : 'border-white/10'}`}
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.18 }}
+                className={`relative aspect-[16/9] overflow-hidden rounded-xl border bg-[#111] outline-none transition-colors focus-visible:ring-2 focus-visible:ring-[#D4AF37] ${index === activeIndex ? 'border-[#D4AF37]' : 'border-border/15 hover:border-[#D4AF37]/50'}`}
               >
                 <Image src={image} alt="" fill className="object-cover object-center" sizes="(max-width:640px) 25vw, 12vw" />
               </motion.button>
@@ -200,6 +213,7 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
       <AnimatePresence>
         {isLightboxOpen && (
           <motion.div
+            ref={dialogRef}
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md sm:p-8"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -222,7 +236,7 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
               <div className="relative aspect-[16/9] overflow-hidden rounded-3xl border border-[#D4AF37]/40 bg-zinc-950 shadow-2xl">
                 <Image src={activeImage} alt={title} fill className="object-contain object-center" sizes="100vw" />
               </div>
-              <button type="button" aria-label="Close fullscreen preview" onClick={() => setIsLightboxOpen(false)} className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
+              <button ref={closeButtonRef} type="button" aria-label="Close fullscreen preview" onClick={() => setIsLightboxOpen(false)} className="absolute right-3 top-3 rounded-full border border-white/20 bg-black/60 p-2 text-white transition hover:border-[#D4AF37] hover:text-[#f9d977]">
                 <X className="h-5 w-5" />
               </button>
               {images.length > 1 && (
@@ -244,7 +258,9 @@ function FeaturedProjectGallery({ title, images }: { title: string; images: stri
   );
 }
 
-export function Projects() {
+export function Projects({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? 'h1' : 'h2';
+
   const projectSchemas = [
     ...featuredProjects.map((project) => ({
       '@context': 'https://schema.org',
@@ -286,9 +302,9 @@ export function Projects() {
       <section id="projects" className="scroll-mt-28 py-8 sm:py-12">
       <div className="mb-8">
         <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF37]">Case Studies</p>
-        <h2 className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
+        <Heading className="text-3xl font-bold tracking-[-0.05em] text-foreground sm:text-4xl">
           Featured work designed for business impact and product clarity.
-        </h2>
+        </Heading>
       </div>
 
       <div className="space-y-6">
@@ -302,37 +318,37 @@ export function Projects() {
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="overflow-hidden rounded-[1.75rem] border border-border/15 bg-surface/90"
           >
-            <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
+            <div className="grid items-stretch gap-0 lg:grid-cols-[0.95fr_1.05fr]">
               <FeaturedProjectGallery title={project.title} images={project.gallery} />
 
-              <div className="p-6 sm:p-7">
-                <div className="mb-4 flex flex-wrap gap-2">
+              <div className="flex flex-col p-5 sm:p-7 lg:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#D4AF37]">{project.summary}</p>
+                <h3 className="mt-2 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">{project.title}</h3>
+                <p className="mt-4 max-w-xl text-[15px] leading-7 text-foreground/70">{project.description}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2" aria-label={`${project.title} technologies`}>
                   {project.tech.map((item) => (
-                    <span key={item} className="rounded-full border border-border/15 bg-foreground/5 px-2.5 py-1 text-[11px] text-foreground/70">
+                    <span key={item} className="rounded-lg border border-border/15 bg-foreground/5 px-2.5 py-1.5 text-xs font-medium text-foreground/75">
                       {item}
                     </span>
                   ))}
-                </div>
+                  </div>
 
-                <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
-                <p className="mt-3 text-lg text-[#D4AF37]">{project.summary}</p>
-                <p className="mt-4 max-w-xl text-base leading-7 text-foreground/65">{project.description}</p>
-
-                <ul className="mt-5 space-y-2 text-sm text-foreground/75">
+                <ul className="mt-6 grid gap-x-4 gap-y-2.5 text-sm leading-6 text-foreground/70 sm:grid-cols-2">
                   {project.highlights.map((highlight) => (
-                    <li key={highlight} className="flex items-center gap-2">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37]" />
-                      {highlight}
+                    <li key={highlight} className="flex min-w-0 items-start gap-2.5">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#D4AF37]" />
+                      <span>{highlight}</span>
                     </li>
                   ))}
                 </ul>
 
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-7 flex flex-wrap gap-3 border-t border-border/15 pt-5">
                   <Link
                     href={project.href}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl bg-[#D4AF37] px-4 py-2.5 text-sm font-semibold text-[#111] transition hover:-translate-y-0.5 hover:bg-[#e6c55c]"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-[#D4AF37] px-4 py-2.5 text-sm font-semibold text-[#111] transition-colors hover:bg-[#e6c55c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                   >
                     Live Demo
                     <ArrowUpRight className="h-4 w-4" />
@@ -341,7 +357,7 @@ export function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center gap-2 rounded-xl border border-border/15 bg-foreground/5 px-4 py-2.5 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-[#D4AF37]/30 hover:text-[#f9d977]"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-xl border border-border/15 bg-foreground/5 px-4 py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-[#D4AF37]/40 hover:text-[#f9d977] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                   >
                     <GitBranch className="h-4 w-4" />
                     GitHub
@@ -360,33 +376,44 @@ export function Projects() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {moreProjects.map((project) => (
-            <motion.div
+            <motion.article
               key={project.title}
-              whileHover={{ y: -6 }}
-              className={`group relative overflow-hidden rounded-[1.5rem] border border-border/15 bg-gradient-to-br ${project.accent} p-[1px]`}
+              id={`featured-${project.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+              whileHover={{ y: -3 }}
+              transition={{ duration: 0.2 }}
+              className="group overflow-hidden rounded-[1.5rem] border border-border/15 bg-surface/90 shadow-card transition-colors hover:border-[#D4AF37]/30"
             >
-              <div className="h-full rounded-[1.45rem] border border-border/15 bg-surface/90 p-5">
-                <div className="mb-5 flex items-center justify-between">
-                  <span className="rounded-full border border-border/15 bg-foreground/5 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-foreground/60">
-                    {project.category}
-                  </span>
-                  <div className="h-2.5 w-2.5 rounded-full bg-[#D4AF37]" />
-                </div>
-                <h3 className="text-xl font-semibold text-foreground">{project.title}</h3>
+              <div className="relative aspect-[2/1] overflow-hidden border-b border-border/15 bg-[#111]">
+                <Image src={project.image} alt={`${project.title} homepage`} fill className="object-contain transition-transform duration-500 group-hover:scale-[1.02]" sizes="(min-width: 768px) 50vw, 100vw" />
+              </div>
+              <div className="p-5 sm:p-6">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#D4AF37]">{project.category}</p>
+                <h3 className="mt-2 text-xl font-semibold text-foreground">{project.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-foreground/65">{project.description}</p>
-                <div className="relative mt-5 aspect-video overflow-hidden rounded-2xl border border-border/15">
-                  <Image src={project.image} alt={`${project.title} homepage`} fill className="object-cover" sizes="(min-width: 768px) 50vw, 100vw" />
-                </div>
-                <div className="mt-5 flex flex-wrap gap-3">
-                  <Link href={project.href} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#D4AF37] hover:text-[#e6c55c]">
-                    Live Demo <ArrowUpRight className="h-4 w-4" />
+                <div className="mt-5 flex flex-wrap gap-3 border-t border-border/15 pt-4">
+                  <Link
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-[#D4AF37] px-3.5 py-2 text-sm font-semibold text-[#111] transition-colors hover:bg-[#e6c55c] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37] focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+                  >
+                    Live Demo
+                    <ArrowUpRight className="h-4 w-4" />
                   </Link>
-                  <Link href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-foreground hover:text-[#f9d977]">
-                    <GitBranch className="h-4 w-4" /> GitHub
-                  </Link>
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex min-h-10 items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-foreground/75 transition-colors hover:text-[#f9d977] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]"
+                    >
+                      <GitBranch className="h-4 w-4" />
+                      GitHub
+                    </Link>
+                  )}
                 </div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </div>

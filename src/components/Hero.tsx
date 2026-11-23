@@ -9,7 +9,10 @@ const roles = [
   'Frontend Developer',
   'Next.js Developer',
   'React Developer',
-  'TypeScript Developer'
+  'TypeScript Developer',
+  'Frontend Web Developer',
+  'Website Developer',
+  'ERPNext & Frappe Developer',
 ];
 
 export function Hero() {
@@ -85,15 +88,17 @@ export function Hero() {
               </span>
             </h1>
 
-            <div className="flex min-h-[2.8rem] items-center gap-2 text-xl font-medium text-foreground/90 sm:text-2xl">
-              <span className="text-foreground/80">I build</span>
-              <span className="min-w-[10ch] text-[#D4AF37]">{text}</span>
-              <span className="animate-pulse text-[#D4AF37]">|</span>
+            <div className="flex min-h-[2.8rem] flex-wrap items-center gap-x-2 text-xl font-medium text-foreground/90 sm:flex-nowrap sm:text-2xl">
+              <span className="shrink-0 text-foreground/80">I build</span>
+              <span className="inline-flex min-h-[1.4em] w-full min-w-0 items-center text-[#D4AF37] sm:w-auto sm:min-w-[27ch]">
+                <span className="min-w-0">{text}</span>
+                <span className="animate-pulse shrink-0">|</span>
+              </span>
             </div>
           </div>
 
           <p className="max-w-xl text-base leading-7 text-foreground/70 sm:text-lg">
-            Building fast, modern and elegant websites with React, Next.js and TypeScript. I design premium digital experiences that feel polished, convert better, and perform beautifully on every screen.
+            I build modern, responsive, visually polished websites and web applications with React, Next.js, and TypeScript, designed to look clear and work smoothly across devices.
           </p>
 
           <div className="flex flex-wrap items-center gap-3">
@@ -105,24 +110,25 @@ export function Hero() {
               <ArrowRight className="h-4 w-4" />
             </Link>
 
-            <a
-  href="/resume/Rajmani_Nadar_Resume.pdf"
-  download
-  className="inline-flex items-center gap-2 rounded-full bg-[#D4AF37] px-6 py-3 font-semibold text-black transition hover:scale-105 hover:bg-yellow-400"
->
-  Download Resume
-</a>
-
             <Link
               href="#contact"
               className="inline-flex items-center gap-2 rounded-xl border border-border/15 bg-transparent px-5 py-3 text-sm font-semibold text-foreground transition hover:-translate-y-0.5 hover:border-[#D4AF37]/40 hover:text-[#f9d977]"
             >
               Contact Me
             </Link>
+
+            <a
+              href="/resume/Rajmani_Nadar_Resume.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium text-foreground/65 transition hover:text-[#f9d977]"
+            >
+              <Download className="h-4 w-4" />
+              Download Resume
+            </a>
           </div>
 
           <div className="flex flex-wrap gap-2 pt-2 text-xs font-medium text-foreground/60">
-            {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'ERPNext', 'Frappe Framework', 'CMS', 'SEO'].map((item) => (
+            {['React', 'Next.js', 'TypeScript', 'ERPNext', 'Frappe'].map((item) => (
               <span key={item} className="rounded-full border border-border/15 bg-foreground/5 px-3 py-1.5">
                 {item}
               </span>
@@ -150,18 +156,13 @@ export function Hero() {
                 </div>
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              <div className="grid gap-4">
                 <div className="rounded-2xl border border-border/15 bg-foreground/5 p-4">
                   <p className="text-[10px] uppercase tracking-[0.18em] text-foreground/45">Experience</p>
                   <p className="mt-3 text-3xl font-bold text-foreground">1.5+ </p>
                   <p className="text-sm text-foreground/60">Years building modern interfaces.</p>
                 </div>
 
-                <div className="rounded-2xl border border-border/15 bg-foreground/5 p-4">
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-foreground/45">Projects</p>
-                  <p className="mt-3 text-3xl font-bold text-foreground">15+</p>
-                  <p className="text-sm text-foreground/60">Responsive and SEO-focused builds.</p>
-                </div>
               </div>
 
               <div className="rounded-2xl border border-[#D4AF37]/20 bg-[#D4AF37]/5 p-4">
@@ -171,7 +172,7 @@ export function Hero() {
                 </div>
 
                 <div className="flex flex-wrap gap-2 text-xs text-foreground/75">
-                  {['Next.js', 'React', 'TypeScript', 'Tailwind', 'CMS', 'REST APIs'].map((tech) => (
+                  {['Tailwind CSS', 'CMS', 'REST APIs'].map((tech) => (
                     <span key={tech} className="rounded-full border border-border/15 bg-background/80 px-2.5 py-1.5">
                       {tech}
                     </span>

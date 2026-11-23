@@ -15,12 +15,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   const url = `${siteUrl}/blog/${article.slug}`;
   return {
-    title: `${article.title} | V. Rajmani Nadar`,
+    title: `${article.title} | Rajmani Dev`,
     description: article.description,
     keywords: article.keywords,
     alternates: { canonical: url },
-    openGraph: { title: article.title, description: article.description, url, siteName: 'V. Rajmani Portfolio', type: 'article', publishedTime: article.publishedAt, authors: ['V. Rajmani Nadar'], images: [`${siteUrl}/blog/${article.slug}/opengraph-image`] },
-    twitter: { card: 'summary_large_image', title: article.title, description: article.description, images: [`${siteUrl}/blog/${article.slug}/opengraph-image`] },
+    openGraph: { title: `${article.title} | Rajmani Dev`, description: article.description, url, siteName: 'Rajmani Dev', type: 'article', publishedTime: article.publishedAt, authors: ['V. Rajmani Nadar'], images: [`${siteUrl}/blog/${article.slug}/opengraph-image`] },
+    twitter: { card: 'summary_large_image', title: `${article.title} | Rajmani Dev`, description: article.description, images: [`${siteUrl}/blog/${article.slug}/opengraph-image`] },
     robots: { index: true, follow: true }
   };
 }

@@ -4,12 +4,12 @@ import { SeoLandingPage } from '@/components/SeoLandingPage';
 const url = 'https://rajmani-dev.vercel.app/erpnext-developer';
 
 export const metadata: Metadata = {
-  title: 'ERPNext & Frappe Frontend Developer | V. Rajmani Nadar',
-  description: 'Frontend developer experienced in ERPNext, Frappe Framework, dashboard customization, CMS-backed business workflows, reusable UI components, and business interfaces.',
+  title: 'ERPNext & Frappe Frontend Developer | V. Rajmani Nadar | Rajmani Dev',
+  description: 'Frontend development for ERPNext and Frappe, including dashboard customization, reusable UI, and business workflow interfaces.',
   keywords: ['ERPNext Developer', 'Frappe Framework Developer', 'ERPNext Dashboard UI', 'ERPNext Frontend Customization', 'Frappe Dashboard Developer', 'ERPNext UI Developer'],
   alternates: { canonical: url },
-  openGraph: { title: 'ERPNext & Frappe Frontend Developer | V. Rajmani Nadar', description: 'Frontend developer experienced in ERPNext, Frappe Framework, dashboard customization, CMS-backed business workflows, reusable UI components, and business interfaces.', url, siteName: 'V. Rajmani Portfolio', type: 'website', images: ['/images/og-image.png'] },
-  twitter: { card: 'summary_large_image', title: 'ERPNext & Frappe Frontend Developer | V. Rajmani Nadar', description: 'Frontend developer experienced in ERPNext, Frappe Framework, dashboard customization, CMS-backed business workflows, reusable UI components, and business interfaces.', images: ['/images/og-image.png'] },
+  openGraph: { title: 'ERPNext & Frappe Frontend Developer | V. Rajmani Nadar | Rajmani Dev', description: 'Frontend development for ERPNext and Frappe, including dashboard customization, reusable UI, and business workflow interfaces.', url, siteName: 'Rajmani Dev', type: 'website', images: ['/images/og-image.jpg'] },
+  twitter: { card: 'summary_large_image', title: 'ERPNext & Frappe Frontend Developer | V. Rajmani Nadar | Rajmani Dev', description: 'Frontend development for ERPNext and Frappe, including dashboard customization, reusable UI, and business workflow interfaces.', images: ['/images/og-image.jpg'] },
   robots: { index: true, follow: true }
 };
 

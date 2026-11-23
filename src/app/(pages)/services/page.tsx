@@ -4,12 +4,12 @@ import { SeoLandingPage } from '@/components/SeoLandingPage';
 const url = 'https://rajmani-dev.vercel.app/services';
 
 export const metadata: Metadata = {
-  title: 'Frontend Development & ERPNext Customization Services | V. Rajmani Nadar',
+  title: 'Frontend & ERPNext Development | Rajmani Dev',
   description: 'Premium React, Next.js, ERPNext, Frappe Framework, CMS, and business workflow web development services by V. Rajmani Nadar.',
   keywords: ['Frontend Development Services', 'React Development Services', 'Next.js Business Websites', 'ERPNext Customization', 'Frappe Framework Development', 'CMS Website Development', 'Responsive UI Development', 'Website SEO Optimization'],
   alternates: { canonical: url },
-  openGraph: { title: 'Frontend Development & ERPNext Customization Services', description: 'Building premium React, Next.js, ERPNext, Frappe Framework, CMS, and business workflow web experiences.', url, siteName: 'V. Rajmani Portfolio', type: 'website', images: ['/images/og-image.png'] },
-  twitter: { card: 'summary_large_image', title: 'Frontend Development & ERPNext Customization Services', description: 'Building premium React, Next.js, ERPNext, Frappe Framework, CMS, and business workflow web experiences.', images: ['/images/og-image.png'] },
+  openGraph: { title: 'Frontend & ERPNext Development | Rajmani Dev', description: 'React, Next.js, ERPNext, and Frappe development by V. Rajmani Nadar.', url, siteName: 'Rajmani Dev', type: 'website', images: ['/images/og-image.jpg'] },
+  twitter: { card: 'summary_large_image', title: 'Frontend & ERPNext Development | Rajmani Dev', description: 'React, Next.js, ERPNext, and Frappe development by V. Rajmani Nadar.', images: ['/images/og-image.jpg'] },
   robots: { index: true, follow: true }
 };
 
